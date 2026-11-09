@@ -1,0 +1,109 @@
+---
+import Base from '../layouts/Base.astro';
+import Scope from '../components/Scope.astro';
+import SectionHead from '../components/SectionHead.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import Notes from '../components/Notes.astro';
+import Contact from '../components/Contact.astro';
+import { t, contact } from '../data/site.js';
+import { href, getProjects } from '../lib/i18n.js';
+
+const { lang = 'en' } = Astro.props;
+const s = t[lang];
+const projects = await getProjects(lang);
+const flagship = projects.find((p) => p.data.flagship);
+const featured = projects.filter((p) => p.data.featured && !p.data.flagship).slice(0, 3);
+---
+<Base lang={lang} path="/">
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero__bg" aria-hidden="true"></div>
+    <div class="wrap hero__inner">
+      <div class="hero__copy">
+        <p class="pill"><span class="dot"></span> <span>{s.hero.pill}</span></p>
+        <h1 set:html={s.hero.h1} />
+        <p class="lead">{s.hero.lead}</p>
+        <div class="hero__cta">
+          <a class="btn btn--primary" href={href(lang, '/projects')}><span>{s.hero.ctaProjects}</span> <svg class="ic"><use href="#i-arrow" /></svg></a>
+          <a class="btn btn--ghost" href={contact.resume} download><span>{s.hero.ctaResume}</span> <svg class="ic"><use href="#i-down" /></svg></a>
+        </div>
+        <p class="hero__meta mono"><svg class="ic"><use href="#i-pin" /></svg> <span set:html={s.hero.meta} /></p>
+      </div>
+      <Scope />
+    </div>
+    <div class="wrap">
+      <ul class="stack-strip mono" aria-label="Core technologies">
+        {s.stack.map((x) => <li>{x}</li>)}
+      </ul>
+    </div>
+  </section>
+
+  <!-- HIGHLIGHTS -->
+  <section class="section section--tight">
+    <div class="wrap"><div class="highlights">
+      {s.highlights.map((h) => (
+        <div class="hl"><p class="hl__num" set:html={h.num} /><p class="hl__label">{h.label}</p></div>
+      ))}
+    </div></div>
+  </section>
+
+  <!-- EXPERTISE -->
+  <section id="expertise" class="section">
+    <div class="wrap">
+      <SectionHead eyebrow={s.expertise.eyebrow} title={s.expertise.h2} sub={s.expertise.sub} />
+      <div class="layers">
+        {s.expertise.items.map((x) => (
+          <article class="layer">
+            <div class="layer__head"><span class="icon"><svg><use href={`#i-${x.icon}`} /></svg></span><span class="layer__n mono">{x.n}</span></div>
+            <h3>{x.title}</h3>
+            <p>{x.text}</p>
+            <p class="chips">{x.chips.map((c) => <span>{c}</span>)}</p>
+          </article>
+        ))}
+      </div>
+      <p class="more"><a class="more__link" href={href(lang, '/skills')}>{s.expertise.more} <svg class="ic"><use href="#i-arrow" /></svg></a></p>
+    </div>
+  </section>
+
+  <!-- FEATURED PROJECTS -->
+  <section id="work" class="section section--panel">
+    <div class="wrap">
+      <SectionHead eyebrow={s.projects.eyebrow} title={s.projects.h2} sub={s.projects.sub} />
+      <div class="bento">
+        {flagship && <ProjectCard p={flagship} lang={lang} big />}
+        {featured.map((p) => <ProjectCard p={p} lang={lang} />)}
+      </div>
+      <p class="more"><a class="btn btn--ghost" href={href(lang, '/projects')}>{s.projects.all} ({projects.length}) <svg class="ic"><use href="#i-arrow" /></svg></a></p>
+    </div>
+  </section>
+
+  <!-- FIELD NOTES -->
+  <section id="debug" class="section">
+    <div class="wrap">
+      <SectionHead eyebrow={s.notes.eyebrow} title={s.notes.h2} sub={s.notes.sub} />
+      <Notes lang={lang} limit={2} />
+      <p class="more"><a class="more__link" href={href(lang, '/field-notes')}>{s.notes.all} ({s.notes.items.length}) <svg class="ic"><use href="#i-arrow" /></svg></a></p>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience" class="section section--panel">
+    <div class="wrap exp">
+      <SectionHead eyebrow={s.experience.eyebrow} title={s.experience.h2} sub={s.experience.sub} />
+      <ol class="timeline">
+        {s.experience.roles.map((r) => (
+          <li>
+            <div class="tl__when mono">{r.when}</div>
+            <div class="tl__body">
+              <h3>{r.title}</h3>
+              {r.where && <p class="tl__where">{r.where}</p>}
+              {r.text && <p>{r.text}</p>}
+            </div>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
+  <Contact lang={lang} />
+</Base>

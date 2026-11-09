@@ -1,0 +1,20 @@
+---
+import Flow from './Flow.astro';
+import { t } from '../data/site.js';
+import { href } from '../lib/i18n.js';
+
+const { p, lang = 'en', big = false } = Astro.props;
+const d = p.data;
+const url = href(lang, `/projects/${p.slug}`);
+---
+<article class:list={['card', { 'card--feature': big }]} data-cat={d.cats.join(' ')}>
+  <div class="card__top">
+    <span class="icon"><svg><use href={`#i-${d.icon}`} /></svg></span>
+    <span class="tag">{d.tag}</span>
+  </div>
+  <h3><a class="card__link" href={url}>{d.title}</a></h3>
+  <p class:list={{ card__lede: big }}>{d.summary}</p>
+  {big && d.flow && <Flow flow={d.flow} />}
+  <p class="chips">{d.chips.map((c) => <span>{c}</span>)}</p>
+  <span class="card__more" aria-hidden="true">{t[lang].projects.read} <svg class="ic"><use href="#i-arrow" /></svg></span>
+</article>

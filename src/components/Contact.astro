@@ -1,0 +1,20 @@
+---
+import { t, contact } from '../data/site.js';
+const { lang = 'en' } = Astro.props;
+const s = t[lang].contactSec;
+---
+<section id="contact" class="section">
+  <div class="wrap">
+    <div class="cta">
+      <div class="cta__glow" aria-hidden="true"></div>
+      <p class="eyebrow mono">{s.eyebrow}</p>
+      <h2>{s.h2}</h2>
+      <p class="sec-sub">{s.sub}</p>
+      <div class="cta__links">
+        <a class="btn btn--primary" href={`mailto:${contact.email}`}><svg class="ic"><use href="#i-mail" /></svg> {contact.email}</a>
+        <a class="btn btn--ghost" href={contact.linkedin} target="_blank" rel="noopener"><svg class="ic"><use href="#i-in" /></svg> LinkedIn</a>
+        <a class="btn btn--ghost" href={contact.github} target="_blank" rel="noopener"><svg class="ic"><use href="#i-gh" /></svg> GitHub</a>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,19 @@
+---
+import Base from '../layouts/Base.astro';
+import SectionHead from '../components/SectionHead.astro';
+import Notes from '../components/Notes.astro';
+import Contact from '../components/Contact.astro';
+import { t } from '../data/site.js';
+
+const { lang = 'en' } = Astro.props;
+const s = t[lang].notes;
+---
+<Base lang={lang} path="/field-notes" title={s.h2}>
+  <section class="section page-top">
+    <div class="wrap">
+      <SectionHead tag="h1" eyebrow={s.eyebrow} title={s.h2} sub={s.sub} />
+      <Notes lang={lang} />
+    </div>
+  </section>
+  <Contact lang={lang} />
+</Base>

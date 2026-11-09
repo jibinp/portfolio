@@ -1,0 +1,55 @@
+---
+import { render } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import Flow from '../components/Flow.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import Contact from '../components/Contact.astro';
+import { t } from '../data/site.js';
+import { href, getProjects } from '../lib/i18n.js';
+
+const { lang = 'en', slug } = Astro.props;
+const s = t[lang].projects;
+const projects = await getProjects(lang);
+const p = projects.find((x) => x.slug === slug);
+const d = p.data;
+const { Content } = await render(p);
+const i = projects.indexOf(p);
+const others = [1, 2, 3].map((k) => projects[(i + k) % projects.length]).filter((x) => x !== p);
+---
+<Base lang={lang} path={`/projects/${slug}`} title={d.title} description={d.summary}>
+  <article class="section page-top project">
+    <div class="wrap">
+      <a class="back mono" href={href(lang, '/projects')}><svg class="ic"><use href="#i-arrow" /></svg> {s.back}</a>
+
+      <header class="project__head">
+        <div class="card__top">
+          <span class="icon icon--lg"><svg><use href={`#i-${d.icon}`} /></svg></span>
+          <span class="tag">{d.tag}</span>
+        </div>
+        <h1>{d.title}</h1>
+        <p class="project__lede">{d.summary}</p>
+        <dl class="project__meta">
+          <div><dt class="mono">{s.areas}</dt><dd class="chips chips--plain">{d.cats.map((c) => <span>{s.filters[c]}</span>)}</dd></div>
+          <div><dt class="mono">{s.tech}</dt><dd class="chips">{d.chips.map((c) => <span>{c}</span>)}</dd></div>
+        </dl>
+      </header>
+
+      {d.flow && <div class="project__flow"><Flow flow={d.flow} /></div>}
+
+      <div class="prose">
+        <Content />
+      </div>
+    </div>
+  </article>
+
+  <section class="section section--panel">
+    <div class="wrap">
+      <header class="sec-head"><h2>{s.more}</h2></header>
+      <div class="bento bento--3">
+        {others.map((o) => <ProjectCard p={o} lang={lang} />)}
+      </div>
+    </div>
+  </section>
+
+  <Contact lang={lang} />
+</Base>

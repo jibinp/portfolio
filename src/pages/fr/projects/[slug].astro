@@ -1,0 +1,10 @@
+---
+import ProjectDetail from '../../../views/ProjectDetail.astro';
+import { getProjects } from '../../../lib/i18n.js';
+export async function getStaticPaths() {
+  const ps = await getProjects('fr');
+  return ps.map((p) => ({ params: { slug: p.slug } }));
+}
+const { slug } = Astro.params;
+---
+<ProjectDetail lang="fr" slug={slug} />

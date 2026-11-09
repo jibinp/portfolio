@@ -1,0 +1,10 @@
+---
+const { eyebrow, title, sub, tag = 'h2' } = Astro.props;
+const H = tag;
+---
+<header class="sec-head">
+  {eyebrow && <p class="eyebrow mono">{eyebrow}</p>}
+  <H>{title}</H>
+  {sub && <p class="sec-sub" set:html={sub} />}
+  <slot />
+</header>

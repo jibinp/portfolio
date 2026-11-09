@@ -1,0 +1,31 @@
+---
+import Base from '../layouts/Base.astro';
+import SectionHead from '../components/SectionHead.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import Contact from '../components/Contact.astro';
+import { t } from '../data/site.js';
+import { getProjects } from '../lib/i18n.js';
+
+const { lang = 'en' } = Astro.props;
+const s = t[lang].projects;
+const projects = await getProjects(lang);
+const f = s.filters;
+---
+<Base lang={lang} path="/projects" title={s.h2}>
+  <section class="section page-top">
+    <div class="wrap">
+      <SectionHead tag="h1" eyebrow={`${projects.length} ${s.h2.toLowerCase()}`} title={s.h2} sub={s.subAll} />
+      <div class="filters" role="group" aria-label="Filter">
+        <button class="filter is-on" type="button" data-f="all" aria-pressed="true">{f.all}</button>
+        <button class="filter" type="button" data-f="hw" aria-pressed="false">{f.hw}</button>
+        <button class="filter" type="button" data-f="fw" aria-pressed="false">{f.fw}</button>
+        <button class="filter" type="button" data-f="sw" aria-pressed="false">{f.sw}</button>
+        <button class="filter" type="button" data-f="db" aria-pressed="false">{f.db}</button>
+      </div>
+      <div class="bento">
+        {projects.map((p) => <ProjectCard p={p} lang={lang} big={p.data.flagship} />)}
+      </div>
+    </div>
+  </section>
+  <Contact lang={lang} />
+</Base>

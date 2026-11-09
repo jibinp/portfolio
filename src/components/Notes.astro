@@ -1,0 +1,16 @@
+---
+import { t } from '../data/site.js';
+const { lang = 'en', limit } = Astro.props;
+const s = t[lang].notes;
+const items = limit ? s.items.slice(0, limit) : s.items;
+---
+<div class="notes">
+  {items.map((n) => (
+    <article class="note">
+      <p class="note__sym mono"><span class="err">✕</span> <span>{n.sym}</span></p>
+      <h3>{n.title}</h3>
+      <p set:html={n.text} />
+      <p class="note__fix mono"><span class="ok">✓</span> <span>{s.fix}: {n.fix}</span></p>
+    </article>
+  ))}
+</div>

@@ -1,0 +1,81 @@
+---
+import '../styles/global.css';
+import Icons from '../components/Icons.astro';
+import { t } from '../data/site.js';
+import { href } from '../lib/i18n.js';
+
+const { lang = 'en', path = '/', title, description } = Astro.props;
+const s = t[lang];
+const pageTitle = title ? `${title} · Jibin Poulose` : s.meta.title;
+const desc = description ?? s.meta.description;
+const site = Astro.site?.toString().replace(/\/$/, '') ?? '';
+const enUrl = site + href('en', path);
+const frUrl = site + href('fr', path);
+const here = (p) => (path === p || (p !== '/' && path.startsWith(p)) ? 'page' : undefined);
+const nav = [
+  { p: '/#expertise', label: s.nav.expertise },
+  { p: '/projects', label: s.nav.projects, cur: here('/projects') },
+  { p: '/field-notes', label: s.nav.notes, cur: here('/field-notes') },
+  { p: '/skills', label: s.nav.skills, cur: here('/skills') },
+  { p: '/#experience', label: s.nav.experience },
+];
+---
+<!doctype html>
+<html lang={lang === 'fr' ? 'fr-CA' : 'en'}>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>{pageTitle}</title>
+  <meta name="description" content={desc}>
+  <meta name="theme-color" content="#07090c">
+  <link rel="canonical" href={lang === 'fr' ? frUrl : enUrl}>
+  <link rel="alternate" hreflang="en" href={enUrl}>
+  <link rel="alternate" hreflang="fr-CA" href={frUrl}>
+  <link rel="alternate" hreflang="x-default" href={enUrl}>
+  <meta property="og:title" content={pageTitle}>
+  <meta property="og:description" content={desc}>
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content={lang === 'fr' ? 'fr_CA' : 'en_CA'}>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body data-menu-open={s.nav.menuOpen} data-menu-close={s.nav.menuClose}>
+  <a class="skip" href="#main">{s.skip}</a>
+  <Icons />
+
+  <header class="nav" id="top">
+    <div class="wrap nav__inner">
+      <a class="brand" href={href(lang, '/')} aria-label={`Jibin Poulose, ${s.nav.home}`}>
+        <span class="brand__mark" aria-hidden="true">JP</span>
+        <span class="brand__name">Jibin Poulose</span>
+      </a>
+      <nav id="nav-links" class="nav__links" aria-label="Main">
+        {nav.map((n) => <a href={href(lang, n.p)} aria-current={n.cur}>{n.label}</a>)}
+        <a class="nav__cta" href={href(lang, '/#contact')}>{s.nav.contact}</a>
+      </nav>
+      <div class="lang" role="group" aria-label="Language / Langue">
+        <a class:list={['lang__btn', { 'is-on': lang === 'en' }]} href={href('en', path)} hreflang="en" lang="en" aria-current={lang === 'en' ? 'true' : undefined}>EN</a>
+        <a class:list={['lang__btn', { 'is-on': lang === 'fr' }]} href={href('fr', path)} hreflang="fr-CA" lang="fr" aria-current={lang === 'fr' ? 'true' : undefined}>FR</a>
+      </div>
+      <button class="nav__toggle" aria-expanded="false" aria-controls="nav-links" aria-label={s.nav.menuOpen}>
+        <span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <slot />
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer__inner">
+      <span>© {new Date().getFullYear()} Jibin Poulose</span>
+      <span class="mono">{s.footer}</span>
+    </div>
+  </footer>
+
+  <script is:inline src="/scripts/main.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+---
+const { flow = [] } = Astro.props;
+const label = flow.map((f) => f.name + (f.link ? ` → ${f.link}` : '')).join(' → ');
+---
+<div class="flow" role="img" aria-label={label}>
+  {flow.map((f) => (
+    <Fragment>
+      <div class="flow__node"><b>{f.name}</b><span set:html={f.detail} /></div>
+      {f.link && <div class="flow__link"><span>{f.link}</span></div>}
+    </Fragment>
+  ))}
+</div>

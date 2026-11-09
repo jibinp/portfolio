@@ -1,0 +1,31 @@
+---
+// Illustrative oscilloscope panel for the hero. Waveform is drawn by main.js.
+---
+<figure class="scope" aria-label="Illustration: field unit sampling a mains-synchronous current waveform">
+  <div class="scope__bar">
+    <span class="leds"><i></i><i></i><i></i></span>
+    <span class="mono">ftu-07 · ch2 current</span>
+    <span class="mono scope__live"><span class="dot"></span>live</span>
+  </div>
+  <div class="scope__screen">
+    <svg viewBox="0 0 400 180" preserveAspectRatio="none" aria-hidden="true">
+      <defs>
+        <pattern id="g" width="40" height="30" patternUnits="userSpaceOnUse"><path d="M40 0H0V30" fill="none" class="gridline" /></pattern>
+      </defs>
+      <rect width="400" height="180" fill="url(#g)" />
+      <line x1="0" y1="90" x2="400" y2="90" class="axis" />
+      <g class="trace"><path id="wave" d="" /></g>
+    </svg>
+  </div>
+  <dl class="scope__stats mono">
+    <div><dt>fs</dt><dd>64 / cycle</dd></div>
+    <div><dt>link</dt><dd>LoRa → 4G</dd></div>
+    <div><dt>rtos</dt><dd>FreeRTOS</dd></div>
+    <div><dt>mcu</dt><dd>STM32H753</dd></div>
+  </dl>
+  <div class="scope__log mono" aria-hidden="true">
+    <p><span class="t">[00:00:01]</span> onboard: register → assign → params → sync → <span class="ok">done</span></p>
+    <p><span class="t">[00:00:02]</span> evt 0x2A41 burst 4/4 <span class="ok">ack</span></p>
+    <p><span class="t">[00:00:03]</span> flash: event committed, crc <span class="ok">ok</span></p>
+  </div>
+</figure>

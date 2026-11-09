@@ -1,0 +1,27 @@
+---
+import Base from '../layouts/Base.astro';
+import SectionHead from '../components/SectionHead.astro';
+import Contact from '../components/Contact.astro';
+import { t } from '../data/site.js';
+
+const { lang = 'en' } = Astro.props;
+const s = t[lang].skills;
+---
+<Base lang={lang} path="/skills" title={s.h2}>
+  <section class="section page-top">
+    <div class="wrap">
+      <SectionHead tag="h1" eyebrow={s.eyebrow} title={s.h2} sub={s.sub} />
+      {s.groups.map((g) => (
+        <Fragment>
+          <h2 class="skill-group mono"><span>{g.name}</span></h2>
+          <div class="skills">
+            {g.items.map((x) => (
+              <div class="skill"><span class="icon"><svg><use href={`#i-${x.icon}`} /></svg></span><h3>{x.title}</h3><p>{x.text}</p></div>
+            ))}
+          </div>
+        </Fragment>
+      ))}
+    </div>
+  </section>
+  <Contact lang={lang} />
+</Base>
