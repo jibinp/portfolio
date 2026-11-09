@@ -69,7 +69,7 @@ npm run build      # output in dist/
 - [ ] Email, LinkedIn and GitHub links in `src/data/site.js` (`contact`)
 - [ ] Resume PDF at `public/Jibin_Poulose_Resume.pdf`
 - [ ] Start date, official job title, previous roles, degree and university (`experience` in `site.js`, both languages)
-- [x] GitHub username in `astro.config.mjs` (jibinp812)
+- [x] GitHub username in `astro.config.mjs` (jibinp)
 
 ## Content rules
 
