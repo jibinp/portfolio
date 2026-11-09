@@ -24,7 +24,7 @@ export const t = {
       home: 'Home',
     },
     hero: {
-      pill: 'Open to engineering roles in Canada',
+      pill: 'Electrical & Electronics Engineer · Toronto',
       h1: 'Ideas, <span class="grad">engineered.</span>',
       lead:
         'Electrical and electronics engineer who takes an idea all the way to a product that works in the field: circuit and PCB, the firmware that runs it, and the backend, database and dashboard its data ends up in. I also lead the team that ships it.',
@@ -69,7 +69,7 @@ export const t = {
     notes: {
       eyebrow: '03 — Field notes',
       h2: "Bugs I'm proud of finding",
-      sub: 'Firmware jobs are won and lost on debugging. Real root causes, told short.',
+      sub: 'Firmware is won or lost on debugging. Real root causes, told short.',
       all: 'All field notes',
       fix: 'fix',
       items: [
@@ -117,8 +117,8 @@ export const t = {
     },
     contactSec: {
       eyebrow: 'Contact',
-      h2: 'Hiring for hardware, embedded or full-stack IoT in Canada?',
-      sub: "I'm happy to talk about a role, a hard bug, a board that won't boot or a dashboard that needs its data.",
+      h2: 'Got a hard problem in hardware, firmware or software?',
+      sub: "Happy to talk about a stubborn bug, a board that won't boot or a dashboard that needs its data.",
     },
     footer: 'Built with Astro · deployed by GitHub Actions',
     skip: 'Skip to content',
@@ -136,7 +136,7 @@ export const t = {
       home: 'Accueil',
     },
     hero: {
-      pill: 'Disponible pour des postes en ingénierie au Canada',
+      pill: 'Ingénieur en génie électrique et électronique · Toronto',
       h1: 'Idées, <span class="grad">concrétisées.</span>',
       lead:
         'Ingénieur en génie électrique et électronique, je mène une idée jusqu’à un produit qui fonctionne sur le terrain : le circuit et le PCB, le micrologiciel qui le fait tourner, puis le backend, la base de données et le tableau de bord où arrivent ses données. Je dirige aussi l’équipe qui le livre.',
@@ -227,8 +227,8 @@ export const t = {
     },
     contactSec: {
       eyebrow: 'Contact',
-      h2: 'Vous recrutez en matériel, en embarqué ou en IoT full-stack au Canada?',
-      sub: 'Je serai ravi de discuter d’un poste, d’un bogue coriace, d’une carte qui ne démarre pas ou d’un tableau de bord qui attend ses données.',
+      h2: 'Un problème coriace en matériel, en micrologiciel ou en logiciel?',
+      sub: 'Je serai ravi de discuter d’un bogue coriace, d’une carte qui ne démarre pas ou d’un tableau de bord qui attend ses données.',
     },
     footer: 'Conçu avec Astro · déployé par GitHub Actions',
     skip: 'Aller au contenu',
