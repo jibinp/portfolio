@@ -16,7 +16,7 @@ export const t = {
     meta: {
       title: 'Jibin Poulose · Electrical & Electronics Engineer',
       description:
-        'Electrical and electronics engineer covering the whole connected product: hardware design and debugging, embedded firmware, backend and frontend software, and databases. Based in Toronto.',
+        'Electrical and electronics engineer covering the whole connected product: hardware design and debugging, embedded firmware, backend and frontend software, and databases. Open to remote, hybrid and on-site roles worldwide.',
     },
     nav: {
       expertise: 'Expertise', projects: 'Projects', notes: 'Field notes', skills: 'Skills',
@@ -24,13 +24,13 @@ export const t = {
       home: 'Home',
     },
     hero: {
-      pill: 'Electrical & Electronics Engineer · Toronto',
+      pill: 'Electrical & Electronics Engineer · Open to roles worldwide',
       h1: 'Ideas, <span class="grad">engineered.</span>',
       lead:
         'Electrical and electronics engineer who takes an idea all the way to a product that works in the field: circuit and PCB, the firmware that runs it, and the backend, database and dashboard its data ends up in. I also lead the team that ships it.',
       ctaProjects: 'View projects',
       ctaResume: 'Download resume',
-      meta: 'Toronto, ON &nbsp;·&nbsp; Hardware · Firmware · Full-stack · Team lead',
+      meta: 'Remote · Hybrid · Relocation-ready &nbsp;·&nbsp; Hardware · Firmware · Full-stack · Team lead',
     },
     stack: ['Altium Designer', 'Analog front ends', 'STM32 · FreeRTOS', 'LoRa · 4G · MQTT', 'FOTA · Bootloader', 'Python · Flask', 'JavaScript · TypeScript', 'PostgreSQL · Supabase', 'SQLite', 'GitHub Actions'],
     highlights: [
@@ -128,7 +128,7 @@ export const t = {
     meta: {
       title: 'Jibin Poulose · Ingénieur en génie électrique et électronique',
       description:
-        'Ingénieur en génie électrique et électronique couvrant tout le produit connecté : conception et débogage matériel, micrologiciel embarqué, logiciel backend et frontend, bases de données. Établi à Toronto.',
+        'Ingénieur en génie électrique et électronique couvrant tout le produit connecté : conception et débogage matériel, micrologiciel embarqué, logiciel backend et frontend, bases de données. Ouvert aux postes à distance, hybrides ou sur site, partout dans le monde.',
     },
     nav: {
       expertise: 'Expertise', projects: 'Projets', notes: 'Notes de terrain', skills: 'Compétences',
@@ -136,13 +136,13 @@ export const t = {
       home: 'Accueil',
     },
     hero: {
-      pill: 'Ingénieur en génie électrique et électronique · Toronto',
+      pill: 'Ingénieur en génie électrique et électronique · Ouvert aux postes partout dans le monde',
       h1: 'Idées, <span class="grad">concrétisées.</span>',
       lead:
         'Ingénieur en génie électrique et électronique, je mène une idée jusqu’à un produit qui fonctionne sur le terrain : le circuit et le PCB, le micrologiciel qui le fait tourner, puis le backend, la base de données et le tableau de bord où arrivent ses données. Je dirige aussi l’équipe qui le livre.',
       ctaProjects: 'Voir les projets',
       ctaResume: 'Télécharger le CV',
-      meta: 'Toronto (Ontario) &nbsp;·&nbsp; Matériel · Micrologiciel · Full-stack · Chef d’équipe',
+      meta: 'À distance · Hybride · Prêt à déménager &nbsp;·&nbsp; Matériel · Micrologiciel · Full-stack · Chef d’équipe',
     },
     stack: ['Altium Designer', 'Étages d’entrée analogiques', 'STM32 · FreeRTOS', 'LoRa · 4G · MQTT', 'FOTA · Bootloader', 'Python · Flask', 'JavaScript · TypeScript', 'PostgreSQL · Supabase', 'SQLite', 'GitHub Actions'],
     highlights: [
@@ -160,7 +160,7 @@ export const t = {
         { icon: 'bolt', n: 'L1', title: 'Conception matérielle', text: 'Schémas et routage de PCB sous Altium : étages d’alimentation et DC-DC, secours par batterie, étages d’entrée analogiques de tension et de courant, pilotes de relais, intégration de modem 4G et Ethernet, nomenclatures et transfert à l’assemblage CMS.', chips: ['Altium', 'AFE', 'Alimentation', 'BOM'] },
         { icon: 'bug', n: 'L1', title: 'Débogage matériel et essais', text: 'Mise en service des cartes, analyse de signaux à l’oscilloscope et à l’analyseur logique, analyse de chaînes de signal analogiques, SWD/JTAG, planification de la préconformité et de la conformité CEM et environnementale.', chips: ['Mise en service', 'Oscilloscope', 'CEM'] },
         { icon: 'chip', n: 'L2', title: 'Micrologiciel embarqué', text: 'C sur STM32, STM8, ESP32 et Nuvoton avec FreeRTOS. Pilotes, moteurs DMA et ADC, chargeur d’amorçage sur mesure et FOTA, stockage flash résistant aux coupures de courant, LoRa, 4G, MQTT, RS485 et CAN.', chips: ['C', 'FreeRTOS', 'FOTA'] },
-        { icon: 'server', n: 'L3', title: 'Backend et infonuagique', text: 'Services Python avec Flask et Socket.IO, chaînes d’ingestion et de validation MQTT, fonctions edge TypeScript planifiées, tâches GitHub Actions et déploiements sur Netlify et Vercel.', chips: ['Python', 'Flask', 'TypeScript'] },
+        { icon: 'server', n: 'L3', title: 'Backend et cloud', text: 'Services Python avec Flask et Socket.IO, chaînes d’ingestion et de validation MQTT, fonctions edge TypeScript planifiées, tâches GitHub Actions et déploiements sur Netlify et Vercel.', chips: ['Python', 'Flask', 'TypeScript'] },
         { icon: 'db', n: 'L3', title: 'Bases de données', text: 'PostgreSQL sur Supabase : conception de schémas, fonctions SQL et chargement de données. SQLite sur les passerelles en périphérie. Modélisation de données pour la télémétrie, les événements, les feuilles de temps et l’analytique.', chips: ['PostgreSQL', 'Supabase', 'SQLite'] },
         { icon: 'monitor', n: 'L4', title: 'Frontend', text: 'Applications web multipages adaptatives et tableaux de bord en direct en HTML, CSS et JavaScript, des vues d’appareils en temps réel à un site analytique de 50 pages et à des outils internes d’équipe.', chips: ['JavaScript', 'HTML/CSS', 'Tableaux de bord'] },
       ],
