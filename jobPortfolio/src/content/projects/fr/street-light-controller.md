@@ -17,4 +17,4 @@ Les deux cartes ont été conçues sous Altium.
 
 ## Sur le terrain
 
-Les contrôleurs publient leur état sur un courtier MQTT. Le [vérificateur de télémétrie de parc](/fr/projects/fleet-telemetry-checker) contrôle chaque paquet envoyé par rapport aux formats du micrologiciel.
+Les contrôleurs publient leur état sur un courtier MQTT. Le [vérificateur de télémétrie de parc](/portfolio/fr/projects/fleet-telemetry-checker) contrôle chaque paquet envoyé par rapport aux formats du micrologiciel.

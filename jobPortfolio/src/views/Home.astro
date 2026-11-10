@@ -6,7 +6,7 @@ import ProjectCard from '../components/ProjectCard.astro';
 import Notes from '../components/Notes.astro';
 import Contact from '../components/Contact.astro';
 import { t, contact } from '../data/site.js';
-import { href, getProjects } from '../lib/i18n.js';
+import { href, asset, getProjects } from '../lib/i18n.js';
 
 const { lang = 'en' } = Astro.props;
 const s = t[lang];
@@ -25,7 +25,7 @@ const featured = projects.filter((p) => p.data.featured && !p.data.flagship).sli
         <p class="lead">{s.hero.lead}</p>
         <div class="hero__cta">
           <a class="btn btn--primary" href={href(lang, '/projects')}><span>{s.hero.ctaProjects}</span> <svg class="ic"><use href="#i-arrow" /></svg></a>
-          <a class="btn btn--ghost" href={contact.resume} download><span>{s.hero.ctaResume}</span> <svg class="ic"><use href="#i-down" /></svg></a>
+          <a class="btn btn--ghost" href={asset(contact.resume)} download><span>{s.hero.ctaResume}</span> <svg class="ic"><use href="#i-down" /></svg></a>
         </div>
         <p class="hero__meta mono"><svg class="ic"><use href="#i-pin" /></svg> <span set:html={s.hero.meta} /></p>
       </div>

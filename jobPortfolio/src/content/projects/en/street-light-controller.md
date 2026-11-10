@@ -17,4 +17,4 @@ Both boards were designed in Altium.
 
 ## In the field
 
-The controllers publish their status to an MQTT broker. The [fleet telemetry checker](/projects/fleet-telemetry-checker) grades every packet they send against the firmware formats.
+The controllers publish their status to an MQTT broker. The [fleet telemetry checker](/portfolio/projects/fleet-telemetry-checker) grades every packet they send against the firmware formats.

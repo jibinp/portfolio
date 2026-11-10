@@ -3,10 +3,15 @@ import { getCollection } from 'astro:content';
 export const LANGS = ['en', 'fr'];
 
 /** Build a link for a language. path is the English path, e.g. "/projects". */
+const BASE = import.meta.env.BASE_URL.replace(/\/$/, '');
+
 export function href(lang, path = '/') {
-  if (lang !== 'fr') return path;
-  return path === '/' ? '/fr/' : '/fr' + path;
+  if (lang !== 'fr') return BASE + path;
+  return BASE + (path === '/' ? '/fr/' : '/fr' + path);
 }
+
+/** Link to a file in public/, e.g. "/favicon.svg". */
+export const asset = (path) => BASE + path;
 
 /** Projects for one language, sorted by order. Each gets a plain slug. */
 export async function getProjects(lang) {

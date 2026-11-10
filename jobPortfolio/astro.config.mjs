@@ -1,7 +1,8 @@
 import { defineConfig } from 'astro/config';
 
 export default defineConfig({
-  // User site: repo must be named jibinp.github.io
+  // Repo "portfolio" -> served at https://jibinp.github.io/portfolio
   site: 'https://jibinp.github.io',
+  base: '/portfolio',
   trailingSlash: 'ignore',
 });

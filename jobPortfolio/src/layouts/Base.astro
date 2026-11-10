@@ -2,7 +2,7 @@
 import '../styles/global.css';
 import Icons from '../components/Icons.astro';
 import { t } from '../data/site.js';
-import { href } from '../lib/i18n.js';
+import { href, asset } from '../lib/i18n.js';
 
 const { lang = 'en', path = '/', title, description } = Astro.props;
 const s = t[lang];
@@ -36,7 +36,7 @@ const nav = [
   <meta property="og:description" content={desc}>
   <meta property="og:type" content="website">
   <meta property="og:locale" content={lang === 'fr' ? 'fr_FR' : 'en_US'}>
-  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href={asset('/favicon.svg')} type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -76,6 +76,6 @@ const nav = [
     </div>
   </footer>
 
-  <script is:inline src="/scripts/main.js" defer></script>
+  <script is:inline src={asset('/scripts/main.js')} defer></script>
 </body>
 </html>

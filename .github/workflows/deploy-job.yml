@@ -1,8 +1,11 @@
-name: Deploy site to GitHub Pages
+name: Deploy job portfolio to GitHub Pages
 
 on:
   push:
     branches: [main]
+    paths:
+      - 'jobPortfolio/**'
+      - '.github/workflows/deploy-job.yml'
   workflow_dispatch:
 
 permissions:
@@ -20,6 +23,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: withastro/action@v3
+        with:
+          path: ./jobPortfolio
 
   deploy:
     needs: build
