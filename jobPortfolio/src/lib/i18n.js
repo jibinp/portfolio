@@ -13,6 +13,12 @@ export function href(lang, path = '/') {
 /** Link to a file in public/, e.g. "/favicon.svg". */
 export const asset = (path) => BASE + path;
 
+/** Articles (English only), sorted by order. */
+export async function getArticles() {
+  const all = await getCollection('articles');
+  return all.map((e) => ({ ...e, slug: e.id })).sort((a, b) => a.data.order - b.data.order);
+}
+
 /** Projects for one language, sorted by order. Each gets a plain slug. */
 export async function getProjects(lang) {
   const all = await getCollection('projects', (e) => e.id.startsWith(lang + '/'));

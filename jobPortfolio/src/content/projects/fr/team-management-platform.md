@@ -6,7 +6,10 @@ cats: ["sw", "db"]
 chips: ["Python", "pandas", "PostgreSQL", "Supabase", "Netlify"]
 summary: "Plateforme web pour les jalons, les tâches, les feuilles de temps et les rapports hebdomadaires aux clients sur plusieurs projets, appuyée sur une base PostgreSQL Supabase."
 order: 6
-featured: true
+flow:
+  - { name: "Données de projet", detail: "Plans · tâches<br>feuilles de temps · rapports", link: "Python · pandas" }
+  - { name: "PostgreSQL", detail: "Supabase<br>par projet · par ingénieur", link: "API Supabase" }
+  - { name: "Application web", detail: "Netlify<br>jalons · rapports hebdomadaires" }
 ---
 
 ## Pourquoi

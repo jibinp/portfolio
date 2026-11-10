@@ -1,0 +1,29 @@
+---
+import Base from '../layouts/Base.astro';
+import SectionHead from '../components/SectionHead.astro';
+import Contact from '../components/Contact.astro';
+import { t } from '../data/site.js';
+import { href, getArticles } from '../lib/i18n.js';
+
+const { lang = 'en' } = Astro.props;
+const s = t[lang].articles;
+const articles = await getArticles();
+---
+<Base lang={lang} path="/articles" title={s.h2}>
+  <section class="section page-top">
+    <div class="wrap">
+      <SectionHead tag="h1" eyebrow={s.eyebrow} title={s.h2} sub={s.sub} />
+      <div class="articles">
+        {articles.map((a) => (
+          <article class="card article-card">
+            <p class="chips">{a.data.tags.map((x) => <span>{x}</span>)}</p>
+            <h3><a class="card__link" href={href('en', `/articles/${a.slug}`)} hreflang="en">{a.data.title}</a></h3>
+            <p>{a.data.summary}</p>
+            <span class="card__more mono" aria-hidden="true">{a.data.readMin} {s.min}{lang === 'fr' ? ` · ${s.inEnglish}` : ''} <svg class="ic"><use href="#i-arrow" /></svg></span>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+  <Contact lang={lang} />
+</Base>

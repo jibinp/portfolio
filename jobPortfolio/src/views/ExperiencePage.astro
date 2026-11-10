@@ -1,0 +1,29 @@
+---
+import Base from '../layouts/Base.astro';
+import SectionHead from '../components/SectionHead.astro';
+import Contact from '../components/Contact.astro';
+import { t } from '../data/site.js';
+
+const { lang = 'en' } = Astro.props;
+const s = t[lang].experience;
+---
+<Base lang={lang} path="/experience" title={s.h2}>
+  <section class="section page-top">
+    <div class="wrap exp">
+      <SectionHead tag="h1" eyebrow={s.eyebrow} title={s.h2} sub={s.sub} />
+      <ol class="timeline">
+        {s.roles.map((r) => (
+          <li>
+            <div class="tl__when mono">{r.when}</div>
+            <div class="tl__body">
+              <h3>{r.title}</h3>
+              {r.where && <p class="tl__where">{r.where}</p>}
+              {r.text && <p set:html={r.text} />}
+            </div>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+  <Contact lang={lang} />
+</Base>

@@ -5,7 +5,7 @@ import Flow from '../components/Flow.astro';
 import ProjectCard from '../components/ProjectCard.astro';
 import Contact from '../components/Contact.astro';
 import { t } from '../data/site.js';
-import { href, getProjects } from '../lib/i18n.js';
+import { href, asset, getProjects } from '../lib/i18n.js';
 
 const { lang = 'en', slug } = Astro.props;
 const s = t[lang].projects;
@@ -35,6 +35,7 @@ const others = [1, 2, 3].map((k) => projects[(i + k) % projects.length]).filter(
       </header>
 
       {d.flow && <div class="project__flow"><Flow flow={d.flow} /></div>}
+      {d.image && <figure class="project__photo"><img src={asset(d.image)} alt={d.imageAlt ?? ''} loading="lazy" decoding="async" /></figure>}
 
       <div class="prose">
         <Content />

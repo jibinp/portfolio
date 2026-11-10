@@ -68,7 +68,7 @@ This folder sits in the `portfolio` repo next to `brandPortfolio/`. The site is 
 ## Before going live
 
 - [ ] Email, LinkedIn and GitHub links in `src/data/site.js` (`contact`)
-- [ ] Resume PDF at `public/Jibin_Poulose_Resume.pdf`
+- [ ] Resume PDF (optional): put it in `public/` and set `resume` in `site.js`; the button stays hidden until then
 - [ ] Start date, official job title, previous roles, degree and university (`experience` in `site.js`, both languages)
 - [x] GitHub username in `astro.config.mjs` (jibinp)
 

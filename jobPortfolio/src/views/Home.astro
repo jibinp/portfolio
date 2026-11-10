@@ -3,14 +3,14 @@ import Base from '../layouts/Base.astro';
 import Scope from '../components/Scope.astro';
 import SectionHead from '../components/SectionHead.astro';
 import ProjectCard from '../components/ProjectCard.astro';
-import Notes from '../components/Notes.astro';
 import Contact from '../components/Contact.astro';
 import { t, contact } from '../data/site.js';
-import { href, asset, getProjects } from '../lib/i18n.js';
+import { href, asset, getProjects, getArticles } from '../lib/i18n.js';
 
 const { lang = 'en' } = Astro.props;
 const s = t[lang];
 const projects = await getProjects(lang);
+const articles = await getArticles();
 const flagship = projects.find((p) => p.data.flagship);
 const featured = projects.filter((p) => p.data.featured && !p.data.flagship).slice(0, 3);
 ---
@@ -25,47 +25,38 @@ const featured = projects.filter((p) => p.data.featured && !p.data.flagship).sli
         <p class="lead">{s.hero.lead}</p>
         <div class="hero__cta">
           <a class="btn btn--primary" href={href(lang, '/projects')}><span>{s.hero.ctaProjects}</span> <svg class="ic"><use href="#i-arrow" /></svg></a>
-          <a class="btn btn--ghost" href={asset(contact.resume)} download><span>{s.hero.ctaResume}</span> <svg class="ic"><use href="#i-down" /></svg></a>
+          {contact.resume && (<a class="btn btn--ghost" href={asset(contact.resume)} download><span>{s.hero.ctaResume}</span> <svg class="ic"><use href="#i-down" /></svg></a>)}
         </div>
         <p class="hero__meta mono"><svg class="ic"><use href="#i-pin" /></svg> <span set:html={s.hero.meta} /></p>
       </div>
       <Scope />
     </div>
-    <div class="wrap">
-      <ul class="stack-strip mono" aria-label="Core technologies">
-        {s.stack.map((x) => <li>{x}</li>)}
-      </ul>
-    </div>
   </section>
 
-  <!-- HIGHLIGHTS -->
-  <section class="section section--tight">
-    <div class="wrap"><div class="highlights">
-      {s.highlights.map((h) => (
-        <div class="hl"><p class="hl__num" set:html={h.num} /><p class="hl__label">{h.label}</p></div>
-      ))}
-    </div></div>
-  </section>
-
-  <!-- EXPERTISE -->
-  <section id="expertise" class="section">
+  <!-- ABOUT -->
+  <section id="about" class="section">
     <div class="wrap">
-      <SectionHead eyebrow={s.expertise.eyebrow} title={s.expertise.h2} sub={s.expertise.sub} />
-      <div class="layers">
-        {s.expertise.items.map((x) => (
-          <article class="layer">
-            <div class="layer__head"><span class="icon"><svg><use href={`#i-${x.icon}`} /></svg></span><span class="layer__n mono">{x.n}</span></div>
-            <h3>{x.title}</h3>
-            <p>{x.text}</p>
-            <p class="chips">{x.chips.map((c) => <span>{c}</span>)}</p>
-          </article>
-        ))}
+      <SectionHead eyebrow={s.about.eyebrow} title={s.about.h2} />
+      <div class="about">
+        <div class="about__text">
+          {s.about.paras.map((p) => <p set:html={p} />)}
+          <p class="about__label mono">{s.about.sectorsLabel}</p>
+          <p class="chips">{s.about.sectors.map((x) => <span>{x}</span>)}</p>
+        </div>
+        <div class="about__side">
+          <div class="highlights">
+            {s.highlights.map((h) => (
+              <div class="hl"><p class="hl__num" set:html={h.num} /><p class="hl__label">{h.label}</p></div>
+            ))}
+          </div>
+          <p class="about__label mono">{s.about.lifecycleLabel}</p>
+          <p class="chips chips--plain about__life">{s.about.lifecycle.map((x) => <span>{x}</span>)}</p>
+        </div>
       </div>
-      <p class="more"><a class="more__link" href={href(lang, '/skills')}>{s.expertise.more} <svg class="ic"><use href="#i-arrow" /></svg></a></p>
     </div>
   </section>
 
-  <!-- FEATURED PROJECTS -->
+  <!-- PROJECTS -->
   <section id="work" class="section section--panel">
     <div class="wrap">
       <SectionHead eyebrow={s.projects.eyebrow} title={s.projects.h2} sub={s.projects.sub} />
@@ -77,12 +68,21 @@ const featured = projects.filter((p) => p.data.featured && !p.data.flagship).sli
     </div>
   </section>
 
-  <!-- FIELD NOTES -->
-  <section id="debug" class="section">
+  <!-- WRITING -->
+  <section id="writing" class="section">
     <div class="wrap">
-      <SectionHead eyebrow={s.notes.eyebrow} title={s.notes.h2} sub={s.notes.sub} />
-      <Notes lang={lang} limit={2} />
-      <p class="more"><a class="more__link" href={href(lang, '/field-notes')}>{s.notes.all} ({s.notes.items.length}) <svg class="ic"><use href="#i-arrow" /></svg></a></p>
+      <SectionHead eyebrow={s.articles.eyebrow} title={s.articles.h2} sub={s.articles.sub} />
+      <div class="articles">
+        {articles.slice(0, 3).map((a) => (
+          <article class="card article-card">
+            <p class="chips">{a.data.tags.map((x) => <span>{x}</span>)}</p>
+            <h3><a class="card__link" href={href('en', `/articles/${a.slug}`)} hreflang="en">{a.data.title}</a></h3>
+            <p>{a.data.summary}</p>
+            <span class="card__more mono" aria-hidden="true">{a.data.readMin} {s.articles.min}{lang === 'fr' ? ` · ${s.articles.inEnglish}` : ''} <svg class="ic"><use href="#i-arrow" /></svg></span>
+          </article>
+        ))}
+      </div>
+      <p class="more"><a class="btn btn--ghost" href={href(lang, '/articles')}>{s.articles.all} ({articles.length}) <svg class="ic"><use href="#i-arrow" /></svg></a></p>
     </div>
   </section>
 
@@ -97,7 +97,7 @@ const featured = projects.filter((p) => p.data.featured && !p.data.flagship).sli
             <div class="tl__body">
               <h3>{r.title}</h3>
               {r.where && <p class="tl__where">{r.where}</p>}
-              {r.text && <p>{r.text}</p>}
+              {r.text && <p set:html={r.text} />}
             </div>
           </li>
         ))}

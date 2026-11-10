@@ -1,0 +1,46 @@
+---
+import { render } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import Contact from '../components/Contact.astro';
+import { t } from '../data/site.js';
+import { href, getArticles } from '../lib/i18n.js';
+
+const { slug } = Astro.props;
+const s = t.en.articles;
+const articles = await getArticles();
+const a = articles.find((x) => x.slug === slug);
+const { Content } = await render(a);
+const others = articles.filter((x) => x !== a);
+---
+<Base lang="en" path={`/articles/${slug}`} title={a.data.title} description={a.data.summary}>
+  <article class="section page-top project">
+    <div class="wrap">
+      <a class="back mono" href={href('en', '/articles')}><svg class="ic"><use href="#i-arrow" /></svg> {s.back}</a>
+      <header class="project__head">
+        <p class="chips">{a.data.tags.map((x) => <span>{x}</span>)}</p>
+        <h1>{a.data.title}</h1>
+        <p class="project__lede">{a.data.summary}</p>
+        <p class="mono article__meta">Jibin Poulose · {a.data.readMin} {s.min}</p>
+      </header>
+      <div class="prose"><Content /></div>
+    </div>
+  </article>
+  {others.length > 0 && (
+    <section class="section section--panel">
+      <div class="wrap">
+        <header class="sec-head"><h2>{s.more}</h2></header>
+        <div class="articles">
+          {others.map((o) => (
+            <article class="card article-card">
+              <p class="chips">{o.data.tags.map((x) => <span>{x}</span>)}</p>
+              <h3><a class="card__link" href={href('en', `/articles/${o.slug}`)}>{o.data.title}</a></h3>
+              <p>{o.data.summary}</p>
+              <span class="card__more mono" aria-hidden="true">{o.data.readMin} {s.min} <svg class="ic"><use href="#i-arrow" /></svg></span>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+  <Contact lang="en" />
+</Base>

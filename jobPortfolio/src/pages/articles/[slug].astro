@@ -1,0 +1,10 @@
+---
+import ArticleDetail from '../../views/ArticleDetail.astro';
+import { getArticles } from '../../lib/i18n.js';
+export async function getStaticPaths() {
+  const as = await getArticles();
+  return as.map((a) => ({ params: { slug: a.slug } }));
+}
+const { slug } = Astro.params;
+---
+<ArticleDetail slug={slug} />

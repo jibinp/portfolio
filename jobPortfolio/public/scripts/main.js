@@ -38,8 +38,7 @@
       for (var i = 0; i <= N; i++) {
         var x = (i / N) * W;
         var t = (i / N) * Math.PI * 2 * 3 + phase;
-        var y = Math.sin(t) * 0.82 + Math.sin(3 * t) * 0.14;
-        y = Math.max(-0.9, Math.min(0.9, y));
+        var y = Math.sin(t) * 0.85;
         d += (i ? 'L' : 'M') + x.toFixed(1) + ' ' + (H / 2 - y * (H * 0.38)).toFixed(1);
       }
       path.setAttribute('d', d);
@@ -90,7 +89,7 @@
 
   /* ---------- Reveal on scroll (staggered) ---------- */
   if (!reduce && 'IntersectionObserver' in window) {
-    var groups = ['.sec-head', '.highlights', '.layers > *', '.bento > *', '.notes > *', '.skills > *', '.timeline > li', '.cta', '.prose > *'];
+    var groups = ['.sec-head', '.highlights', '.tiles > *', '.layers > *', '.bento > *', '.notes > *', '.skills > *', '.timeline > li', '.cta', '.prose > *'];
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (en) {
         if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); }
@@ -104,4 +103,28 @@
       });
     });
   }
+})();
+
+/* ---------- Contact form (Web3Forms) ---------- */
+(function () {
+  var form = document.querySelector('.cform');
+  if (!form) return;
+  var status = form.querySelector('.cform__status');
+  var btn = form.querySelector('button[type="submit"]');
+  var label = btn.querySelector('span');
+  var idle = label.textContent;
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    status.className = 'cform__status';
+    status.textContent = '';
+    btn.disabled = true; label.textContent = form.dataset.sending;
+    fetch(form.action, { method: 'POST', headers: { Accept: 'application/json' }, body: new FormData(form) })
+      .then(function (r) { return r.json(); })
+      .then(function (d) {
+        if (d && d.success) { form.reset(); status.classList.add('is-ok'); status.textContent = form.dataset.ok; }
+        else { throw new Error('send failed'); }
+      })
+      .catch(function () { status.classList.add('is-err'); status.textContent = form.dataset.err; })
+      .then(function () { btn.disabled = false; label.textContent = idle; });
+  });
 })();

@@ -19,10 +19,26 @@ const projects = defineCollection({
     order: z.number(),                     // lower = earlier
     flagship: z.boolean().default(false),  // big full-width card
     featured: z.boolean().default(false),  // shown on the home page
+    image: z.string().optional(),          // photo in public/, e.g. /img/projects/x.jpg
+    imageAlt: z.string().optional(),
     flow: z
       .array(z.object({ name: z.string(), detail: z.string(), link: z.string().optional() }))
       .optional(),                         // optional system diagram
   }),
 });
 
-export const collections = { projects };
+/*
+  Articles: English only, src/content/articles/<slug>.md
+*/
+const articles = defineCollection({
+  loader: glob({ pattern: '*.md', base: './src/content/articles' }),
+  schema: z.object({
+    title: z.string(),
+    summary: z.string(),
+    tags: z.array(z.string()).default([]),
+    readMin: z.number(),                   // reading time in minutes
+    order: z.number(),                     // lower = first
+  }),
+});
+
+export const collections = { projects, articles };

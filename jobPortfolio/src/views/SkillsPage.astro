@@ -11,6 +11,8 @@ const s = t[lang].skills;
   <section class="section page-top">
     <div class="wrap">
       <SectionHead tag="h1" eyebrow={s.eyebrow} title={s.h2} sub={s.sub} />
+      <h2 class="skill-group mono"><span>{t[lang].about.lifecycleLabel}</span></h2>
+      <p class="chips chips--plain lifecycle">{t[lang].about.lifecycle.map((x) => <span>{x}</span>)}</p>
       {s.groups.map((g) => (
         <Fragment>
           <h2 class="skill-group mono"><span>{g.name}</span></h2>
