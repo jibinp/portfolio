@@ -4,10 +4,9 @@
 */
 
 export const contact = {
-  // TODO: replace placeholders
-  email: 'you@example.com',
-  linkedin: 'https://www.linkedin.com/in/your-handle',
-  github: 'https://github.com/your-handle',
+  email: 'jibinp812@gmail.com',
+  linkedin: 'https://www.linkedin.com/in/jibinpoulose',
+  github: 'https://github.com/jibinp',
   resume: '/Jibin_Poulose_Resume.pdf', // TODO: add the PDF to public/
 };
 
@@ -37,7 +36,7 @@ export const t = {
       { num: '4<span>layers</span>', label: 'of the product I work in: board, firmware, backend, front end' },
       { num: '4<span>PCBs</span>', label: 'Altium board designs across rail, elevator and street-light products' },
       { num: '6', label: 'product domains: rail, building, smart city, industrial, energy, marine' },
-      { num: 'Lead', label: 'of an engineering team across concurrent client projects' },
+      { num: 'Lead', label: 'of a 6-engineer team across 5+ concurrent client projects' },
     ],
     expertise: {
       eyebrow: '01 — Expertise',
@@ -109,10 +108,12 @@ export const t = {
       h2: "Where I've worked",
       sub: 'Leading delivery as well as doing the engineering: stand-ups, sprint and monthly plans, code reviews, client reports, vendor and lab coordination, knowledge transfer.',
       roles: [
-        // TODO: start date, official title, previous roles
-        { when: '— Present', title: 'Technical Lead: Hardware, Firmware & Software', where: 'RIOD Logic · India', text: "Lead hardware design, firmware and software delivery for several concurrent IoT client projects in rail, building, smart city, industrial and energy, with a team of engineers. I also build the company's internal web platforms and data tools." },
-        // TODO: degree, university, year
-        { when: 'Education', title: 'B.Tech, Electronics & Communication Engineering', where: '', text: '' },
+        { when: 'Feb 2026 — Present', title: 'Senior Embedded Systems Engineer (Technical Lead)', where: 'RIOD Logic · India', text: "Lead hardware design, firmware and software delivery for 5+ concurrent IoT client projects in rail, building, smart city, industrial and energy, with a team of 6 engineers. I also build the company's internal web platforms and data tools." },
+        { when: 'Oct 2020 — Jan 2026', title: 'Senior Repair Technician', where: 'Ivy Technology · Canada', text: 'Board-level fault finding and repair of laptops, desktops and peripherals with multimeters, oscilloscopes and logic probes, working from schematics and BOMs. 8–10 boards a day, each tested to confirm the fix.' },
+        { when: '2016 — 2017', title: 'FPGA Developer', where: 'Audrey Tech · India', text: 'Developed and tested FPGA designs.' },
+        { when: 'Oct 2015 — Oct 2016', title: 'Graduate Trainee', where: 'TELK (Transformers and Electricals Kerala) · India', text: 'Trained at a high-voltage power transformer manufacturer.' },
+        { when: '2018 — 2019', title: 'Post-Graduate Program, Embedded Systems Design and Development', where: 'Lambton College · Canada', text: '' },
+        { when: '2011 — 2015', title: "Bachelor's Degree, Electrical and Electronics Engineering", where: 'India · WES assessed', text: '' },
       ],
     },
     contactSec: {
@@ -149,7 +150,7 @@ export const t = {
       { num: '4<span>couches</span>', label: 'du produit sur lesquelles je travaille : carte, micrologiciel, backend, frontend' },
       { num: '4<span>PCB</span>', label: 'cartes conçues sous Altium pour des produits ferroviaires, d’ascenseurs et d’éclairage public' },
       { num: '6', label: 'domaines : ferroviaire, bâtiment, ville intelligente, industriel, énergie, maritime' },
-      { num: 'Chef', label: 'd’une équipe d’ingénieurs sur plusieurs projets clients en parallèle' },
+      { num: 'Chef', label: 'd’une équipe de 6 ingénieurs sur plus de 5 projets clients en parallèle' },
     ],
     expertise: {
       eyebrow: '01 — Expertise',
@@ -221,8 +222,12 @@ export const t = {
       h2: 'Mon parcours',
       sub: 'Je dirige la livraison tout en faisant l’ingénierie : réunions quotidiennes, plans de sprint et mensuels, revues de code, rapports aux clients, coordination avec les fournisseurs et les laboratoires, transfert de connaissances.',
       roles: [
-        { when: '— Aujourd’hui', title: 'Chef technique : matériel, micrologiciel et logiciel', where: 'RIOD Logic · Inde', text: 'Je dirige la conception matérielle, le micrologiciel et la livraison logicielle de plusieurs projets IoT clients en parallèle (ferroviaire, bâtiment, ville intelligente, industriel et énergie), avec une équipe d’ingénieurs. Je développe aussi les plateformes web et les outils de données internes de l’entreprise.' },
-        { when: 'Formation', title: 'B.Tech, génie électronique et des communications', where: '', text: '' },
+        { when: 'Févr. 2026 — Aujourd’hui', title: 'Ingénieur principal en systèmes embarqués (chef technique)', where: 'RIOD Logic · Inde', text: 'Je dirige la conception matérielle, le micrologiciel et la livraison logicielle de plus de 5 projets IoT clients en parallèle (ferroviaire, bâtiment, ville intelligente, industriel et énergie), avec une équipe de 6 ingénieurs. Je développe aussi les plateformes web et les outils de données internes de l’entreprise.' },
+        { when: 'Oct. 2020 — Janv. 2026', title: 'Technicien principal en réparation', where: 'Ivy Technology · Canada', text: 'Recherche de pannes et réparation au niveau de la carte d’ordinateurs portables, de postes de travail et de périphériques, au multimètre, à l’oscilloscope et à la sonde logique, à partir des schémas et des nomenclatures. 8 à 10 cartes par jour, chacune testée pour confirmer la réparation.' },
+        { when: '2016 — 2017', title: 'Développeur FPGA', where: 'Audrey Tech · Inde', text: 'Conception et essai de designs FPGA.' },
+        { when: 'Oct. 2015 — Oct. 2016', title: 'Stagiaire diplômé', where: 'TELK (Transformers and Electricals Kerala) · Inde', text: 'Formation chez un fabricant de transformateurs de puissance haute tension.' },
+        { when: '2018 — 2019', title: 'Programme postdiplôme, conception et développement de systèmes embarqués', where: 'Lambton College · Canada', text: '' },
+        { when: '2011 — 2015', title: 'Baccalauréat en génie électrique et électronique', where: 'Inde · évalué par WES', text: '' },
       ],
     },
     contactSec: {
