@@ -23,7 +23,7 @@ src/views/                          page layouts, shared by EN and FR
 src/components/                     cards, diagram, contact block, icons
 src/styles/global.css               design
 public/                             favicon, main.js, resume PDF
-.github/workflows/deploy.yml        build + publish on every push to main
+../.github/workflows/deploy-job.yml build + publish when jobPortfolio/ changes (repo root)
 ```
 
 ## Add a project
@@ -58,11 +58,12 @@ npm run build      # output in dist/
 
 ## Publish with GitHub Pages
 
-1. Create a **public** repo named `<github-username>.github.io`.
-2. Set `site` in `astro.config.mjs` to `https://<github-username>.github.io`.
-3. Push this folder to the repo's `main` branch.
-4. In the repo, go to **Settings → Pages → Source** and choose **GitHub Actions**.
-5. Every push to `main` builds and publishes the site in about a minute.
+This folder sits in the `portfolio` repo next to `brandPortfolio/`. The site is served at https://jibinp.github.io/portfolio, so `astro.config.mjs` sets `base: '/portfolio'`.
+
+- Internal links: use `href(lang, '/path')` from `src/lib/i18n.js`. Files in `public/`: use `asset('/file')`. Both add the base.
+- Links inside project Markdown must start with `/portfolio/`.
+- One-time setup: in the repo, **Settings → Pages → Source** = **GitHub Actions**.
+- Every push to `main` that changes `jobPortfolio/` rebuilds the site in about a minute.
 
 ## Before going live
 
