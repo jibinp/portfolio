@@ -832,3 +832,16 @@ a.lang__btn { display: inline-grid; place-items: center; text-decoration: none; 
 .cform__status.is-err { color: var(--err); }
 .cform__or { margin-top: 28px; font-size: .74rem; letter-spacing: .08em; text-transform: uppercase; color: var(--text-3); }
 .cform__or + .cta__links { margin-top: 14px; }
+
+/* ---------- Experience entries: summary + sections + bullets ---------- */
+.tl__text { color: var(--text-2); font-size: .95rem; }
+.tl__text > p:first-child { margin-bottom: 4px; }
+.tl__text .tl__sec { margin: 14px 0 6px; font: 500 .72rem/1 var(--mono); letter-spacing: .1em; text-transform: uppercase; color: var(--accent); }
+.tl__text ul { display: grid; gap: 6px; padding: 0; margin: 0; list-style: none; }
+.tl__text li { position: relative; padding-left: 18px; line-height: 1.55; }
+.tl__text li::before { content: ""; position: absolute; left: 2px; top: .62em; width: 6px; height: 6px; border-radius: 2px; background: var(--accent); opacity: .85; }
+/* nested bullets must not inherit the timeline card style */
+.timeline .tl__text li { display: block; padding: 0 0 0 18px; background: none; border: 0; border-radius: 0; grid-template-columns: none; gap: 0; }
+/* experience page: single wide column so bullets read on one line */
+.page-top .exp { grid-template-columns: 1fr; }
+.page-top .exp .sec-head { margin-bottom: 28px; }

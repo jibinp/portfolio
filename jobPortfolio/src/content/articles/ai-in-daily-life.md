@@ -13,7 +13,7 @@ A year ago AI was something I read about. Today it touches most of my working da
 - **Paperwork:** agents I built draft daily timesheets, weekly client updates and team task plans from the real project files. I review and send. The time I used to spend writing about the work now goes into the work.
 - **Code:** an AI coding assistant helps me read unfamiliar code fast, write the routine parts and build test tools that would otherwise never get written.
 - **Learning:** when I move into a new area, such as a cloud service or a protocol I have not used, AI is a patient tutor that answers the tenth "why" without complaint.
-- **Personal life:** my own web app for finance, health and career data was built with AI help, and it keeps me more organised than any spreadsheet did.
+- **Side projects:** a multi-module web platform I built with AI help, with around 420 tests behind it.
 
 ## Where it quietly gets things wrong
 

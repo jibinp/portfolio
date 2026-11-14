@@ -4,7 +4,7 @@ tag: "Universitaire · B.Tech 2015"
 icon: "cpu"
 cats: ["hw", "fw", "sw"]
 chips: ["TM4C1294", "MSP430", "BeagleBoard-xM", "Arduino", "RF · Bluetooth", "PCB sur mesure", "Android"]
-summary: "Un robot humanoïde de 142 cm qui apprend une tâche à partir de gestes de la main et la répète sur commande vocale. Un projet d’équipe, sélectionné parmi les 14 meilleurs en Inde au Texas Instruments India Design Contest 2015."
+summary: "Un robot humanoïde de 142 cm qui apprend une tâche à partir de gestes de la main et la répète sur commande vocale. Un projet d’équipe, l’un des 14 finalistes sur 1 209 équipes au Texas Instruments India Design Contest 2015."
 order: 20
 featured: true
 image: "/img/projects/aihro.jpg"
@@ -33,6 +33,6 @@ On apprend une tâche au robot en bougeant la main avec un bracelet gestuel, ou 
 
 ## Distinction
 
-Sélectionné parmi les **14 meilleurs projets en Inde** au Texas Instruments Innovation Challenge India Design Contest (TIIC IDC) 2015.
+L’une des **14 équipes finalistes sur 1 209** au Texas Instruments Innovation Challenge India Design Contest (TIIC IDC) 2015.
 
 [Code, fichiers des cartes et photos sur GitHub](https://github.com/jibinp/Artificial-intelligent-Hummanoid-Robot-AIHRo-)

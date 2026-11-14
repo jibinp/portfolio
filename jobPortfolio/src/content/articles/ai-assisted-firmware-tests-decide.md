@@ -32,7 +32,7 @@ None of these show up in a code review, by a person or by an AI. They show up on
 
 Every change, whoever or whatever wrote it, has to pass something that can fail:
 
-- **Unit tests** for logic: frame encoding and decoding, conversions, state machines. My personal web platform has around 420 of them.
+- **Unit tests** for logic: frame encoding and decoding, conversions, state machines. One of my web platforms has around 420 of them.
 - **Simulators** for anything that talks to hardware, so protocol changes can be tested before a board is on the desk.
 - **Formal test reports** for behaviour that matters in the field. On a railway field unit, the flash event storage had to survive a 74-hour radio outage: 568 of 568 events stored and delivered, 0 gaps, and the flash write pointer matching the gateway's data to the byte.
 

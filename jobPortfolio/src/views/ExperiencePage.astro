@@ -18,7 +18,7 @@ const s = t[lang].experience;
             <div class="tl__body">
               <h3>{r.title}</h3>
               {r.where && <p class="tl__where">{r.where}</p>}
-              {r.text && <p set:html={r.text} />}
+              {r.text && <div class="tl__text" set:html={r.text} />}
             </div>
           </li>
         ))}

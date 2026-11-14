@@ -4,7 +4,7 @@ tag: "Academic · B.Tech 2015"
 icon: "cpu"
 cats: ["hw", "fw", "sw"]
 chips: ["TM4C1294", "MSP430", "BeagleBoard-xM", "Arduino", "RF · Bluetooth", "Custom PCBs", "Android"]
-summary: "A 142 cm humanoid robot that learns a task from hand gestures and repeats it on a voice command. A team project, selected in the top 14 in India in the Texas Instruments India Design Contest 2015."
+summary: "A 142 cm humanoid robot that learns a task from hand gestures and repeats it on a voice command. A team project, one of 14 finalists from 1,209 teams in the Texas Instruments India Design Contest 2015."
 order: 20
 featured: true
 image: "/img/projects/aihro.jpg"
@@ -33,6 +33,6 @@ You teach the robot a task by moving your hand with a wearable gesture band, or 
 
 ## Recognition
 
-Selected in the **top 14 projects in India** in the Texas Instruments Innovation Challenge India Design Contest (TIIC IDC) 2015.
+One of **14 finalist teams out of 1,209** in the Texas Instruments Innovation Challenge India Design Contest (TIIC IDC) 2015.
 
 [Code, board files and photos on GitHub](https://github.com/jibinp/Artificial-intelligent-Hummanoid-Robot-AIHRo-)
