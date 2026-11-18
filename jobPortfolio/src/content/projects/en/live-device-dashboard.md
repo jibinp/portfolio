@@ -6,6 +6,8 @@ cats: ["sw"]
 chips: ["Python", "Flask", "Socket.IO", "MQTT", "JavaScript"]
 summary: "A Flask backend subscribes to device MQTT topics and pushes each reading to the browser over Socket.IO, so sensor data appears on the page the moment the device sends it."
 order: 5
+cover: "/img/projects/live-device-dashboard-cover.png"
+coverAlt: "Illustration: sensor unit, Flask backend and a live browser page"
 flow:
   - { name: "Sensor unit", detail: "Air quality · CO2 · VOC<br>sound events · people count", link: "MQTT · JSON" }
   - { name: "Flask backend", detail: "paho-mqtt subscriber<br>Python", link: "Socket.IO" }

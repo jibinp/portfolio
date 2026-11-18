@@ -6,6 +6,8 @@ cats: ["sw"]
 chips: ["Python", "Flask", "Socket.IO", "MQTT", "JavaScript"]
 summary: "Un backend Flask s’abonne aux topics MQTT des appareils et pousse chaque mesure vers le navigateur via Socket.IO, pour que les données des capteurs apparaissent sur la page dès que l’appareil les envoie."
 order: 5
+cover: "/img/projects/live-device-dashboard-cover.png"
+coverAlt: "Illustration : unité de capteurs, serveur Flask et page web en direct"
 flow:
   - { name: "Boîtier de capteurs", detail: "Qualité de l’air · CO2 · COV<br>événements sonores · comptage", link: "MQTT · JSON" }
   - { name: "Backend Flask", detail: "Abonné paho-mqtt<br>Python", link: "Socket.IO" }

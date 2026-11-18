@@ -6,6 +6,8 @@ cats: ["hw", "fw"]
 chips: ["Quectel EC200U open-CPU", "SDK Quectel", "Compteur DLMS", "Relais bistables", "Programmateur", "4G MQTT", "Python"]
 summary: "Un contrôleur d’éclairage public 4G qui lit un compteur d’énergie, commute des zones de lampadaires selon un programme et déclenche des alarmes électriques. Responsabilité complète du projet, de la conception à la livraison."
 order: 3
+cover: "/img/projects/street-light-controller-cover.png"
+coverAlt: "Illustration : éclairage public de nuit avec le contrôleur 4G sur un poteau"
 flow:
   - { name: "Compteur d’énergie", detail: "Relevés DLMS<br>tension · courant · énergie", link: "DLMS" }
   - { name: "Contrôleur d’éclairage", detail: "Quectel EC200U open-CPU<br>3 relais bistables · programmateur<br>alarmes électriques et de lampe", link: "4G · MQTT" }

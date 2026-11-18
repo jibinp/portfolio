@@ -6,6 +6,8 @@ cats: ["hw", "fw", "sw"]
 chips: ["TM4C1294", "MSP430", "BeagleBoard-xM", "Arduino", "RF · Bluetooth", "Custom PCBs", "Android"]
 summary: "A 142 cm humanoid robot that learns a task from hand gestures and repeats it on a voice command. A team project, one of 14 finalists from 1,209 teams in the Texas Instruments India Design Contest 2015."
 order: 20
+cover: "/img/projects/aihro-humanoid-robot-cover.png"
+coverAlt: "Illustration: gesture band, the AIHRo robot and a voice command"
 featured: true
 image: "/img/projects/aihro.jpg"
 imageAlt: "The AIHRo humanoid robot standing in a corridor"

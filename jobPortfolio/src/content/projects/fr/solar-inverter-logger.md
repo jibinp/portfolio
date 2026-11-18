@@ -6,6 +6,8 @@ cats: ["hw", "fw", "sw"]
 chips: ["STM32", "4G LTE Cat-1", "RS485 Modbus", "AWS IoT Core", "Provisionnement de flotte", "IoT Jobs", "MQTT · TLS", "Élément sécurisé"]
 summary: "Un enregistreur de données 4G qui lit des onduleurs solaires et transmet à AWS IoT, avec provisionnement de flotte, mises à jour à distance signées et rotation des certificats. Responsabilité complète du projet, du matériel jusqu’à la conception de l’appareil vers AWS."
 order: 9
+cover: "/img/projects/solar-inverter-logger-cover.png"
+coverAlt: "Illustration : onduleurs solaires, enregistreur 4G, AWS IoT et plateforme du client"
 featured: true
 flow:
   - { name: "Onduleurs solaires", detail: "Plusieurs marques<br>4 types de charge utile", link: "RS485 · Modbus RTU" }

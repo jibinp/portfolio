@@ -6,6 +6,8 @@ cats: ["hw", "fw"]
 chips: ["STM32F103", "STM8", "RS485 Modbus", "4G LTE", "MQTT", "FOTA"]
 summary: "Une unité de modernisation qui lit un contrôleur d’ascenseur en RS485 et transmet l’état, les défauts et les compteurs en 4G. Responsabilité complète du projet, jusqu’à l’expédition et l’acceptation client."
 order: 2
+cover: "/img/projects/elevator-monitor-cover.png"
+coverAlt: "Illustration : gaine d’ascenseur, armoire et boîtier de suivi 4G"
 flow:
   - { name: "Contrôleur d’ascenseur", detail: "Armoire existante<br>état · défauts · compteurs", link: "RS485 Modbus · ~1 s" }
   - { name: "Boîtier de suivi", detail: "STM32F103 · C bare-metal<br>file hors ligne en flash<br>chargeur d’amorçage FOTA", link: "UART · AT" }

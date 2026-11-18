@@ -6,6 +6,8 @@ cats: ["hw", "fw"]
 chips: ["FPGA", "Verilog", "Xilinx ISE", "Spartan-6", "VLSI"]
 summary: "Logique FPGA en Verilog sur un Xilinx Spartan-6 pour intégrer un module Wi-Fi dans une tablette du domaine VLSI, ainsi que des contrôleurs UART et SPI, en tant que développeur FPGA chez Audrey Technologies."
 order: 19
+cover: "/img/projects/fpga-wifi-tablet-cover.png"
+coverAlt: "Illustration : carte de tablette avec le FPGA, le module Wi-Fi, UART et SPI"
 flow:
   - { name: "Conception Verilog", detail: "Logique d’intégration Wi-Fi<br>contrôleurs UART · SPI", link: "synthèse" }
   - { name: "Xilinx ISE", detail: "Synthèse · placement<br>et routage", link: "bitstream" }

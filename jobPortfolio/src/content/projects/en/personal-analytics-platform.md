@@ -6,6 +6,8 @@ cats: ["sw", "db"]
 chips: ["AI agents", "JavaScript", "PostgreSQL · Supabase", "Row-level security", "PWA", "GitHub Actions", "Chart.js", "Netlify"]
 summary: "An AI-supported web app that brings health, career and finance tools together under one umbrella: about 47 pages with a phone version, about 100 PostgreSQL tables behind row-level security, and data analysis by 12 custom AI agents running in the background."
 order: 7
+cover: "/img/projects/personal-analytics-platform-cover.png"
+coverAlt: "Illustration: health, career and finance tools, desktop and phone app, database and AI agents"
 flow:
   - { name: "AI agents", detail: "Background data analysis", link: "reviewed data" }
   - { name: "Web + phone app", detail: "About 47 pages · PWA<br>Chart.js dashboards", link: "Supabase SDK · RLS" }

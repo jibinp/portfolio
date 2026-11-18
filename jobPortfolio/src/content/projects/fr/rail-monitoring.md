@@ -6,6 +6,8 @@ cats: ["hw", "fw", "sw", "db"]
 chips: ["STM32H753", "FreeRTOS", "LoRa", "Zigbee", "4G LTE", "Ethernet", "Passerelle Linux", "Python", "SQLite", "MQTT · TLS", "Prédiction IA/ML"]
 summary: "Un système de maintenance prédictive pour les équipements ferroviaires. Des unités de terrain enregistrent le comportement de chaque équipement, ces données de terrain entraînent notre modèle d’IA/ML, et le modèle prédit les pannes avant qu’elles ne provoquent un arrêt du système. Responsabilité complète du projet : conception du système, micrologiciel des unités de terrain, passerelle de gare sous Linux, modèle d’IA/ML et vérification de la conception matérielle. Conçu selon la spécification de l’organisme national de recherche ferroviaire."
 order: 1
+cover: "/img/projects/rail-monitoring-cover.png"
+coverAlt: "Illustration : unité de terrain en bord de voie, passerelle de gare avec prédiction IA/ML, et le cloud"
 flagship: true
 featured: true
 flow:

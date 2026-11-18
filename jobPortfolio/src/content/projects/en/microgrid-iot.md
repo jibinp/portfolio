@@ -6,6 +6,8 @@ cats: ["hw", "fw", "sw"]
 chips: ["Raspberry Pi", "Arduino", "C++", "Current sensing", "Changeover switching", "AWS S3"]
 summary: "A small renewable microgrid that powers light loads from a solar-charged battery, switches between grid and renewable supply automatically, and shows live usage on a website. A team project."
 order: 21
+cover: "/img/projects/microgrid-iot-cover.png"
+coverAlt: "Illustration: solar and wind, battery, changeover, Raspberry Pi and website"
 image: "/img/projects/microgrid.jpg"
 imageAlt: "Microgrid bench setup: changeover switch, inverter and test lamp"
 flow:

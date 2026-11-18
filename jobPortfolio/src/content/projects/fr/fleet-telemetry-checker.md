@@ -6,6 +6,8 @@ cats: ["sw", "db"]
 chips: ["Python", "MQTT", "Tâches planifiées", "SQLite", "Streamlit"]
 summary: "Un collecteur MQTT en écoute seule et une tâche cloud planifiée qui évaluent chaque paquet d’une flotte de contrôleurs d’éclairage public par rapport aux formats de paquets du micrologiciel. près de 20 000 paquets de 13 appareils vérifiés au cours de ses 17 premiers jours."
 order: 4
+cover: "/img/projects/fleet-telemetry-checker-cover.png"
+coverAlt: "Illustration : appareils de terrain, collecteur MQTT, vérificateur de paquets et tableau de bord"
 flow:
   - { name: "Appareils de terrain", detail: "Contrôleurs d’éclairage", link: "MQTT · session persistante" }
   - { name: "Collecteur", detail: "Abonné en écoute seule<br>le courtier garde les paquets", link: "toutes les 3 h" }

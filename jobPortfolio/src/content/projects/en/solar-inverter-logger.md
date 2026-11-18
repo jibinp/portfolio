@@ -6,6 +6,8 @@ cats: ["hw", "fw", "sw"]
 chips: ["STM32", "4G LTE Cat-1", "RS485 Modbus", "AWS IoT Core", "Fleet provisioning", "IoT Jobs", "MQTT · TLS", "Secure element"]
 summary: "A 4G data logger that reads solar inverters and reports to AWS IoT, with fleet provisioning, signed over-the-air updates and certificate rotation. Complete project ownership, from the hardware to the device-to-AWS design."
 order: 9
+cover: "/img/projects/solar-inverter-logger-cover.png"
+coverAlt: "Illustration: solar inverters, the 4G data logger, AWS IoT and the client platform"
 featured: true
 flow:
   - { name: "Solar inverters", detail: "Multiple brands<br>4 payload types", link: "RS485 · Modbus RTU" }

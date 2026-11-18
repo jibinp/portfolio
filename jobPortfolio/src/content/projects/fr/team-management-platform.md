@@ -6,6 +6,8 @@ cats: ["sw", "db"]
 chips: ["Python", "pandas", "PostgreSQL", "Supabase", "Netlify"]
 summary: "Plateforme web pour les jalons, les tâches, les feuilles de temps et les rapports hebdomadaires aux clients sur plusieurs projets, appuyée sur une base PostgreSQL Supabase."
 order: 6
+cover: "/img/projects/team-management-platform-cover.png"
+coverAlt: "Illustration : tableau des tâches, jalons, feuilles de temps et base de données"
 flow:
   - { name: "Données de projet", detail: "Plans · tâches<br>feuilles de temps · rapports", link: "Python · pandas" }
   - { name: "PostgreSQL", detail: "Supabase<br>par projet · par ingénieur", link: "API Supabase" }

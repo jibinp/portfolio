@@ -7,8 +7,8 @@ const d = p.data;
 const url = href(lang, `/projects/${p.slug}`);
 ---
 <article class:list={['card', { 'card--feature': big }]} data-cat={d.cats.join(' ')}>
-  {!big && d.image && (
-    <div class="card__media"><img src={asset(d.image)} alt={d.imageAlt ?? ''} loading="lazy" decoding="async" /></div>
+  {!big && (d.cover || d.image) && (
+    <div class:list={['card__media', { 'card__media--cover': !d.image }]}><img src={asset(d.image ?? d.cover)} alt={(d.image ? d.imageAlt : d.coverAlt) ?? ''} loading="lazy" decoding="async" /></div>
   )}
   <div class="card__top">
     <span class="icon"><svg><use href={`#i-${d.icon}`} /></svg></span>

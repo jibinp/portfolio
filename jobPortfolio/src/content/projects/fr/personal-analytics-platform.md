@@ -6,6 +6,8 @@ cats: ["sw", "db"]
 chips: ["Agents d’IA", "JavaScript", "PostgreSQL · Supabase", "Sécurité au niveau des lignes", "PWA", "GitHub Actions", "Chart.js", "Netlify"]
 summary: "Une application web assistée par l’IA qui réunit des outils de santé, de carrière et de finances sous un même toit : environ 47 pages avec une version mobile, environ 100 tables PostgreSQL protégées par la sécurité au niveau des lignes, et une analyse des données par 12 agents d’IA sur mesure en arrière-plan."
 order: 7
+cover: "/img/projects/personal-analytics-platform-cover.png"
+coverAlt: "Illustration : outils santé, carrière et finances, application ordinateur et mobile, base de données et agents d’IA"
 flow:
   - { name: "Agents d’IA", detail: "Analyse des données en arrière-plan", link: "données relues" }
   - { name: "Web + application mobile", detail: "Environ 47 pages · PWA<br>tableaux de bord Chart.js", link: "SDK Supabase · RLS" }

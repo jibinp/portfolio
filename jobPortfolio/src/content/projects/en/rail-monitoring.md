@@ -6,6 +6,8 @@ cats: ["hw", "fw", "sw", "db"]
 chips: ["STM32H753", "FreeRTOS", "LoRa", "Zigbee", "4G LTE", "Ethernet", "Linux gateway", "Python", "SQLite", "MQTT · TLS", "AI/ML prediction"]
 summary: "A predictive maintenance system for railway assets. Field units record how every asset behaves, that field data trains our AI/ML model, and the model predicts faults before they cause system downtime. Complete project ownership: system design, field-unit firmware, the Linux station gateway, the AI/ML model and hardware design checks. Built to the national railway research body's specification."
 order: 1
+cover: "/img/projects/rail-monitoring-cover.png"
+coverAlt: "Illustration: field unit by the track, station gateway with AI/ML prediction, and the cloud"
 flagship: true
 featured: true
 flow:

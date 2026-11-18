@@ -6,6 +6,8 @@ cats: ["sw"]
 chips: ["Claude Code", "AI agents", "Python", "Git", "Prompt and rule design"]
 summary: "7 custom AI agents that support a 6-engineer team across four areas: team operations, research, data analysis and AI-assisted development, all working from the real project files. I designed and built them, and I review everything they produce."
 order: 6.5
+cover: "/img/projects/ai-agents-engineering-ops-cover.png"
+coverAlt: "Illustration: project evidence, AI agents, engineer review, team and clients"
 featured: true
 flow:
   - { name: "Project evidence", detail: "Project files · datasheets<br>test data · session notes", link: "evidence script" }

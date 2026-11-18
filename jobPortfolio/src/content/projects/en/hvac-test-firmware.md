@@ -6,6 +6,8 @@ cats: ["fw"]
 chips: ["Nuvoton M031 · Cortex-M0", "Bootloader", "RS485", "ESP32", "4G / 2G modem", "GCC · CMake"]
 summary: "A one-week support job on a heating and cooling controller board: factory test firmware for its relay and input checks, and a cellular modem change for a new market."
 order: 11
+cover: "/img/projects/hvac-test-firmware-cover.png"
+coverAlt: "Illustration: test station connected over RS485 to the controller board"
 flow:
   - { name: "Test station", detail: "RS485 console<br>pass / fail per step", link: "RS485 · 9600" }
   - { name: "M031 test firmware", detail: "Cortex-M0 · behind bootloader<br>app at 0x2800", link: "GPIO" }

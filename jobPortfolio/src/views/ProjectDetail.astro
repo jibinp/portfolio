@@ -21,6 +21,8 @@ const others = [1, 2, 3].map((k) => projects[(i + k) % projects.length]).filter(
     <div class="wrap">
       <a class="back mono" href={href(lang, '/projects')}><svg class="ic"><use href="#i-arrow" /></svg> {s.back}</a>
 
+      {d.cover && <figure class="project__cover"><img src={asset(d.cover)} alt={d.coverAlt ?? ''} decoding="async" /></figure>}
+
       <header class="project__head">
         <div class="card__top">
           <span class="icon icon--lg"><svg><use href={`#i-${d.icon}`} /></svg></span>

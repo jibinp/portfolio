@@ -6,6 +6,8 @@ cats: ["hw", "fw", "sw"]
 chips: ["Raspberry Pi", "Arduino", "C++", "Mesure de courant", "Commutation de source", "AWS S3"]
 summary: "Un petit micro-réseau renouvelable qui alimente des charges légères à partir d’une batterie chargée par le solaire, bascule automatiquement entre le réseau et la source renouvelable, et affiche la consommation en direct sur un site web. Un projet d’équipe."
 order: 21
+cover: "/img/projects/microgrid-iot-cover.png"
+coverAlt: "Illustration : solaire et éolien, batterie, commutation, Raspberry Pi et site web"
 image: "/img/projects/microgrid.jpg"
 imageAlt: "Montage du micro-réseau : commutateur, onduleur et lampe d’essai"
 flow:

@@ -21,6 +21,8 @@ const projects = defineCollection({
     featured: z.boolean().default(false),  // shown on the home page
     image: z.string().optional(),          // photo in public/, e.g. /img/projects/x.jpg
     imageAlt: z.string().optional(),
+    cover: z.string().optional(),          // illustrated top image, e.g. /img/projects/x-cover.png
+    coverAlt: z.string().optional(),
     flow: z
       .array(z.object({ name: z.string(), detail: z.string(), link: z.string().optional() }))
       .optional(),                         // optional system diagram

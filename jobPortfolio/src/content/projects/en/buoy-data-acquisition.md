@@ -6,6 +6,8 @@ cats: ["fw"]
 chips: ["Nuvoton M451 · Cortex-M4", "Bare-metal C", "GPS / NavIC", "Keil · Arm Compiler 6"]
 summary: "Took over the production firmware of a solar navigation-light buoy (GPS and NavIC position, battery and solar charging, lamp status, tsunami alert) and fixed the faults found in service."
 order: 10
+cover: "/img/projects/buoy-data-acquisition-cover.png"
+coverAlt: "Illustration: navigation-light buoy at sea with solar charging and GNSS"
 flow:
   - { name: "GNSS + sensors", detail: "GPS · NavIC receiver<br>battery · solar · light sensor", link: "UART · ADC" }
   - { name: "Buoy controller", detail: "Nuvoton M451 · Cortex-M4<br>charging · lamp logic<br>tsunami alert", link: "4× a day + on command" }

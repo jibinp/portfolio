@@ -6,6 +6,8 @@ cats: ["hw", "fw"]
 chips: ["8051", "Assembly", "Keil", "Proteus", "GSM / SMS"]
 summary: "A prepaid electricity meter on an 8051, written in assembly: it counts energy pulses, takes credit off the balance, warns when credit is low and cuts supply at zero. Recharge by SMS."
 order: 22
+cover: "/img/projects/prepaid-energy-meter-cover.png"
+coverAlt: "Illustration: prepaid meter, recharge server and a phone sending a recharge PIN"
 image: "/img/projects/meter.jpg"
 imageAlt: "Meter display showing the prepaid balance"
 flow:

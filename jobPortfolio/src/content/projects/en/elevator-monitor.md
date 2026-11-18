@@ -6,6 +6,8 @@ cats: ["hw", "fw"]
 chips: ["STM32F103", "STM8", "RS485 Modbus", "4G LTE", "MQTT", "FOTA"]
 summary: "A retrofit unit that reads a lift controller over RS485 and reports status, faults and counters over 4G. Complete project ownership, taking the product to shipping and customer acceptance."
 order: 2
+cover: "/img/projects/elevator-monitor-cover.png"
+coverAlt: "Illustration: lift shaft, lift panel and the 4G monitor unit"
 flow:
   - { name: "Lift controller", detail: "Existing panel<br>status · faults · counters", link: "RS485 Modbus · ~1 s" }
   - { name: "Monitor unit", detail: "STM32F103 · bare-metal C<br>flash-backed offline queue<br>FOTA bootloader", link: "UART · AT" }

@@ -6,6 +6,8 @@ cats: ["hw", "fw"]
 chips: ["8051", "Assembleur", "Keil", "Proteus", "GSM / SMS"]
 summary: "Un compteur d’électricité prépayé sur 8051, écrit en assembleur : il compte les impulsions d’énergie, déduit le crédit du solde, avertit quand le crédit est faible et coupe l’alimentation à zéro. Recharge par SMS."
 order: 22
+cover: "/img/projects/prepaid-energy-meter-cover.png"
+coverAlt: "Illustration : compteur prépayé, serveur de recharge et téléphone envoyant un code"
 image: "/img/projects/meter.jpg"
 imageAlt: "Afficheur du compteur indiquant le solde prépayé"
 flow:

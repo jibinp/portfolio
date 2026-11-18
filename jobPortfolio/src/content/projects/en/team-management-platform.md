@@ -6,6 +6,8 @@ cats: ["sw", "db"]
 chips: ["Python", "pandas", "PostgreSQL", "Supabase", "Netlify"]
 summary: "Web platform for milestones, tasks, timesheets and weekly client reports across several client projects, backed by a Supabase PostgreSQL database."
 order: 6
+cover: "/img/projects/team-management-platform-cover.png"
+coverAlt: "Illustration: task board, milestones, timesheets and database"
 flow:
   - { name: "Project data", detail: "Plans · tasks<br>timesheets · reports", link: "Python · pandas" }
   - { name: "PostgreSQL", detail: "Supabase<br>per project · per engineer", link: "Supabase API" }

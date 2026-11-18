@@ -6,6 +6,8 @@ cats: ["fw"]
 chips: ["Nuvoton M031 · Cortex-M0", "Chargeur d’amorçage", "RS485", "ESP32", "Modem 4G / 2G", "GCC · CMake"]
 summary: "Une mission d’appui d’une semaine sur une carte de contrôleur de chauffage et de climatisation : micrologiciel de test en usine pour ses vérifications de relais et d’entrées, et changement de modem cellulaire pour un nouveau marché."
 order: 11
+cover: "/img/projects/hvac-test-firmware-cover.png"
+coverAlt: "Illustration : poste de test relié en RS485 à la carte du contrôleur"
 flow:
   - { name: "Poste d’essai", detail: "Console RS485<br>réussi / échec par étape", link: "RS485 · 9600" }
   - { name: "Micrologiciel de test M031", detail: "Cortex-M0 · derrière le chargeur<br>application à 0x2800", link: "GPIO" }

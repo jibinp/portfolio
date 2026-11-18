@@ -6,6 +6,8 @@ cats: ["fw"]
 chips: ["Nuvoton M451 · Cortex-M4", "C bare-metal", "GPS / NavIC", "Keil · Arm Compiler 6"]
 summary: "Reprise du micrologiciel de production d’une bouée lumineuse de navigation solaire (position GPS et NavIC, batterie et charge solaire, état de la lampe, alerte tsunami) et correction des défauts constatés en service."
 order: 10
+cover: "/img/projects/buoy-data-acquisition-cover.png"
+coverAlt: "Illustration : bouée lumineuse en mer avec charge solaire et GNSS"
 flow:
   - { name: "GNSS + capteurs", detail: "Récepteur GPS · NavIC<br>batterie · solaire · luminosité", link: "UART · ADC" }
   - { name: "Contrôleur de bouée", detail: "Nuvoton M451 · Cortex-M4<br>charge · logique de lampe<br>alerte tsunami", link: "4× par jour + sur commande" }

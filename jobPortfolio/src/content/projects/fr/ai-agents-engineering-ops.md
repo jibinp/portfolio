@@ -6,6 +6,8 @@ cats: ["sw"]
 chips: ["Claude Code", "Agents d’IA", "Python", "Git", "Conception de règles et de prompts"]
 summary: "7 agents d’IA sur mesure qui soutiennent une équipe de 6 ingénieurs dans quatre domaines : gestion de l’équipe, recherche, analyse de données et développement assisté par l’IA, en partant des vrais fichiers de projet. Je les ai conçus et développés, et je relis tout ce qu’ils produisent."
 order: 6.5
+cover: "/img/projects/ai-agents-engineering-ops-cover.png"
+coverAlt: "Illustration : preuves de projet, agents d’IA, relecture, équipe et clients"
 featured: true
 flow:
   - { name: "Preuves de projet", detail: "Fichiers de projet · fiches techniques<br>données d’essai · notes de session", link: "script de preuves" }

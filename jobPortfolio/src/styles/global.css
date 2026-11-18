@@ -797,6 +797,9 @@ a.lang__btn { display: inline-grid; place-items: center; text-decoration: none; 
 .about__text .about__label + .chips + .about__label { margin-top: 22px; }
 .project__photo { margin: 28px 0 0; border-radius: var(--r-lg); overflow: hidden; border: 1px solid var(--border); max-width: 760px; }
 .project__photo img { display: block; width: 100%; height: auto; }
+.project__cover { margin: 18px 0 30px; border-radius: var(--r-lg); overflow: hidden; border: 1px solid var(--border); }
+.project__cover img { display: block; width: 100%; height: auto; aspect-ratio: 1200 / 480; object-fit: cover; }
+.card__media--cover img { object-position: center center; filter: none; }
 .flow__node b { display: block; margin-bottom: 6px; }
 .flow__node span { display: block; font: 400 .74rem/1.6 var(--mono); color: var(--text-3); }
 /* detailed diagrams: compact wrapping link labels, roomier boxes */

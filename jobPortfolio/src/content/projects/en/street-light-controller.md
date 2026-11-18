@@ -6,6 +6,8 @@ cats: ["hw", "fw"]
 chips: ["Quectel EC200U open-CPU", "Quectel SDK", "DLMS meter", "Latching relays", "Scheduler", "4G MQTT", "Python"]
 summary: "A 4G street-light controller that reads an energy meter, switches lamp zones on schedule and raises power alarms. Complete project ownership, from design to release."
 order: 3
+cover: "/img/projects/street-light-controller-cover.png"
+coverAlt: "Illustration: street lights at night with the 4G controller on a pole"
 flow:
   - { name: "Energy meter", detail: "DLMS readings<br>voltage · current · energy", link: "DLMS" }
   - { name: "Street-light controller", detail: "Quectel EC200U open-CPU<br>3 latching relays · scheduler<br>power and lamp-fault alarms", link: "4G · MQTT" }

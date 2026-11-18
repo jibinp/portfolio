@@ -6,6 +6,8 @@ cats: ["sw", "db"]
 chips: ["Python", "MQTT", "Scheduled jobs", "SQLite", "Streamlit"]
 summary: "A listen-only MQTT collector and a scheduled cloud job that grade every packet from a fleet of street-light controllers against the firmware packet formats. Almost 20,000 packets from 13 devices checked in its first 17 days."
 order: 4
+cover: "/img/projects/fleet-telemetry-checker-cover.png"
+coverAlt: "Illustration: field devices, MQTT collector, packet checker and dashboard"
 flow:
   - { name: "Field devices", detail: "Street-light controllers", link: "MQTT · persistent session" }
   - { name: "Collector", detail: "Listen-only subscriber<br>broker holds packets offline", link: "every 3 h" }
