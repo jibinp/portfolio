@@ -4,17 +4,17 @@ tag: "FPGA · VLSI"
 icon: "chip"
 cats: ["hw", "fw"]
 chips: ["FPGA", "Verilog", "Xilinx ISE", "Spartan-6", "VLSI"]
-summary: "Designed and implemented the Wi-Fi module for a tablet in the VLSI domain, on a Xilinx Spartan-6 FPGA, as an FPGA developer at Audrey Technologies."
+summary: "FPGA logic in Verilog on a Xilinx Spartan-6 to integrate a Wi-Fi module into a tablet in the VLSI domain, plus UART and SPI controllers, as an FPGA developer at Audrey Technologies."
 order: 19
 flow:
-  - { name: "Verilog design", detail: "Wi-Fi module logic", link: "synthesis" }
+  - { name: "Verilog design", detail: "Wi-Fi integration logic<br>UART · SPI controllers", link: "synthesis" }
   - { name: "Xilinx ISE", detail: "Synthesis · place<br>and route", link: "bitstream" }
-  - { name: "Spartan-6 FPGA", detail: "Tablet Wi-Fi module" }
+  - { name: "Spartan-6 FPGA", detail: "Wi-Fi module in the tablet" }
 ---
 
 ## The project
 
-Audrey Technologies was developing a tablet in the VLSI domain. My part was the Wi-Fi module: I designed it and implemented it on a Xilinx Spartan-6 FPGA.
+Audrey Technologies was developing a tablet in the VLSI domain. My part was the FPGA logic to integrate a Wi-Fi module into the tablet, on a Xilinx Spartan-6, plus UART and SPI controllers.
 
 ## How it was built
 

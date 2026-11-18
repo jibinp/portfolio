@@ -19,6 +19,6 @@ Un contrôleur CVC avec 8 relais (résistances chauffantes, chaudière, ventilat
 ## Ce que j’ai fait (une mission d’une semaine)
 
 - **Micrologiciel de test en usine pour le M031 :** test des relais, deux tests d’entrées monofil et un test de détection de réinitialisation, pilotés depuis une console RS485 au poste de test.
-- **Fonctionne derrière un chargeur d’amorçage :** l’application est liée à l’offset 0x2800. Un Cortex-M0 n’a pas de registre de décalage de table des vecteurs, donc le chargeur d’amorçage doit lui-même sauter vers l’application.
+- **Fonctionne derrière un chargeur d’amorçage :** l’application est liée à l’offset 0x2800. Un Cortex-M0 n’a pas de registre de décalage de table des vecteurs, donc les vecteurs d’interruption de l’application ne peuvent pas simplement être déplacés ; le passage du chargeur d’amorçage à l’application doit en tenir compte.
 - Se compile avec Keil (Arm Compiler 6) comme avec CMake et arm-none-eabi-gcc.
 - **Changement de modem :** passage du modem de l’ESP32 du LTE-M américain au 2G sur les bandes 900/1800 MHz pour le marché indien.

@@ -4,7 +4,7 @@ tag: "Projet indépendant"
 icon: "db"
 cats: ["sw", "db"]
 chips: ["Agents d’IA", "JavaScript", "PostgreSQL · Supabase", "Sécurité au niveau des lignes", "PWA", "GitHub Actions", "Chart.js", "Netlify"]
-summary: "Une application web assistée par l’IA qui réunit des outils de santé, de carrière et de finances sous un même toit : environ 47 pages avec une version mobile, environ 100 tables PostgreSQL protégées par la sécurité au niveau des lignes, et une analyse des données par des agents d’IA en arrière-plan."
+summary: "Une application web assistée par l’IA qui réunit des outils de santé, de carrière et de finances sous un même toit : environ 47 pages avec une version mobile, environ 100 tables PostgreSQL protégées par la sécurité au niveau des lignes, et une analyse des données par 12 agents d’IA sur mesure en arrière-plan."
 order: 7
 flow:
   - { name: "Agents d’IA", detail: "Analyse des données en arrière-plan", link: "données relues" }
@@ -19,7 +19,7 @@ Une application web assistée par l’IA qui réunit des outils distincts de san
 
 ## Assistance par l’IA
 
-Des agents d’IA (Claude Code) fonctionnent en arrière-plan et se chargent de l’analyse des données derrière l’application. Leurs résultats sont relus avant d’arriver dans la base de données.
+12 agents d’IA sur mesure (Claude Code) fonctionnent en arrière-plan et se chargent de l’analyse des données derrière l’application. Leurs résultats sont relus avant d’arriver dans la base de données.
 
 ## Comment elle est construite
 

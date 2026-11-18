@@ -10,7 +10,7 @@ Leading several client projects at once comes with a lot of writing. Every day t
 
 So I built AI agents to write the first draft. Not a chatbot I paste notes into, but agents that go and look at the work themselves.
 
-## Three agents, three jobs
+## Three of my seven agents: team operations
 
 - **Timesheet writer:** reads what changed across my project folders today and writes an hour-by-hour timesheet.
 - **Weekly client update:** writes one plain-English update per project per week, in that project's own format.

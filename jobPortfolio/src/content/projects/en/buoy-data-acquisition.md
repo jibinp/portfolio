@@ -24,4 +24,3 @@ A solar-powered navigation-light buoy. Its controller logs GPS and NavIC positio
 - **Compiler upgrade:** moved the project from Arm Compiler 5 to 6. Fixed a link error, rewrote the HardFault handler as a naked function, and fixed the build scripts.
 - Clearer ADC naming and extra debug fields in the remote status reply.
 
-18 logged changes in total.

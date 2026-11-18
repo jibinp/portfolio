@@ -10,9 +10,9 @@ Early in my career I thought the job was the board and the firmware. Leading cli
 
 ## Reading a spec is a communication task
 
-On one project the client sent three documents: requirements, a cloud integration guide and a payload format. Read separately, each looked fine. Read side by side, they disagreed on topic names, data formats, upload intervals and even the size of the box against its own connectors. I logged 18 open questions before a single line of firmware was written.
+Requirements often arrive as several documents. Read separately, each looks fine. Read side by side, they do not always agree. I log every open question in writing before a single line of firmware is written.
 
-None of that needed advanced engineering. It needed careful reading and the confidence to ask. Every one of those questions, answered early, is a week of rework that never happens.
+None of that needed advanced engineering. It needed careful reading and the confidence to ask. Every question answered early is a week of rework that never happens.
 
 ## Writing for the person reading it
 

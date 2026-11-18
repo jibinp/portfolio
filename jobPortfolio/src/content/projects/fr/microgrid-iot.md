@@ -10,7 +10,7 @@ image: "/img/projects/microgrid.jpg"
 imageAlt: "Montage du micro-réseau : commutateur, onduleur et lampe d’essai"
 flow:
   - { name: "Solaire / éolien + batterie", detail: "Batterie 12 V<br>onduleur pour l’éclairage", link: "onduleur" }
-  - { name: "Commutation", detail: "Commutateur automatique 63 A<br>relais réseau 20 A", link: "courant · tension" }
+  - { name: "Commutation", detail: "Commutateur automatique 63 A<br>relais réseau 20 A", link: "courant · batterie" }
   - { name: "Raspberry Pi", detail: "Logique de commande C++<br>Arduino en SPI", link: "envoi" }
   - { name: "Site web sur AWS S3", detail: "Consommation en direct<br>réseau ou renouvelable" }
 ---
@@ -22,8 +22,8 @@ Le solaire ou l’éolien charge une batterie de 12 V, qui alimente les charges 
 ## Comment il est construit
 
 - **Partie puissance :** un inverseur de source automatique biphasé de 63 A entre le réseau et la source renouvelable, et un relais de 20 A qui coupe l’alimentation réseau.
-- **Mesure :** un transformateur de courant SCT-013 et un capteur de tension lus par un Arduino.
+- **Mesure :** un transformateur de courant SCT-013 lu par un Arduino, et un capteur INA219 pour la charge de la batterie.
 - **Commande :** un Raspberry Pi en C++ lit l’Arduino en SPI, applique des seuils de tension et de courant et commute les relais.
-- **Site web :** le Pi écrit les valeurs en direct dans une page web et la téléverse sur AWS S3 toutes les quelques secondes, pour que les utilisateurs voient la quantité d’énergie fournie par chaque source.
+- **Site web :** le Pi écrit les valeurs en direct dans une page web et la téléverse sur AWS S3 toutes les quelques secondes, pour que les utilisateurs voient la quantité d’énergie fournie par chaque source, avec un bouton pour choisir le réseau ou la source renouvelable.
 
 [Code et circuit sur GitHub](https://github.com/jibinp/Micro-Grid-Integrated-with-IOT) · [Code du site web](https://github.com/jibinp/MGIoT-Website)

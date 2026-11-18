@@ -4,7 +4,7 @@ tag: "Independent project"
 icon: "db"
 cats: ["sw", "db"]
 chips: ["AI agents", "JavaScript", "PostgreSQL · Supabase", "Row-level security", "PWA", "GitHub Actions", "Chart.js", "Netlify"]
-summary: "An AI-supported web app that brings health, career and finance tools together under one umbrella: about 47 pages with a phone version, about 100 PostgreSQL tables behind row-level security, and data analysis by AI agents running in the background."
+summary: "An AI-supported web app that brings health, career and finance tools together under one umbrella: about 47 pages with a phone version, about 100 PostgreSQL tables behind row-level security, and data analysis by 12 custom AI agents running in the background."
 order: 7
 flow:
   - { name: "AI agents", detail: "Background data analysis", link: "reviewed data" }
@@ -19,7 +19,7 @@ An AI-supported web app that brings separate health, career and finance tools to
 
 ## AI support
 
-AI agents (Claude Code) run in the background and handle the data analysis behind the app. Their results are reviewed before they reach the database.
+12 custom AI agents (Claude Code) run in the background and handle the data analysis behind the app. Their results are reviewed before they reach the database.
 
 ## How it's built
 

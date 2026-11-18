@@ -24,4 +24,3 @@ Une bouée lumineuse de navigation alimentée à l’énergie solaire. Son contr
 - **Mise à niveau du compilateur :** migration du projet d’Arm Compiler 5 à 6. Correction d’une erreur d’édition de liens, réécriture du gestionnaire HardFault en fonction naked et correction des scripts de compilation.
 - Nommage ADC plus clair et champs de débogage supplémentaires dans la réponse d’état à distance.
 
-18 modifications consignées au total.

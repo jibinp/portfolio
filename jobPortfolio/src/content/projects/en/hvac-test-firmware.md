@@ -19,6 +19,6 @@ An HVAC controller with 8 relays (heaters, furnace, fan, freeze protection) and 
 ## What I did (a one-week job)
 
 - **Factory test firmware for the M031:** relay test, two single-wire input tests and a reset-detect test, driven from an RS485 console at the test station.
-- **Runs behind a bootloader:** the app is linked at offset 0x2800. A Cortex-M0 has no vector-table offset register, so the bootloader has to jump to the app itself.
+- **Runs behind a bootloader:** the app is linked at offset 0x2800. A Cortex-M0 has no vector-table offset register, so the app's interrupt vectors cannot simply be moved; the bootloader hand-off has to account for that.
 - Builds with both Keil (Arm Compiler 6) and CMake with arm-none-eabi-gcc.
 - **Modem change:** moved the ESP32's modem from US LTE-M to 2G on the 900/1800 MHz bands for the Indian market.
