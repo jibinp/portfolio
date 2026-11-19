@@ -1,16 +1,14 @@
 # Portfolio
 
-One repo, two sites.
+Job portfolio: experience, projects, skills and articles, for recruiters and LinkedIn. Astro, English and French.
 
-| Folder | What it is | Live at |
-|---|---|---|
-| [`jobPortfolio/`](jobPortfolio/) | Job portfolio: experience, projects and skills, for recruiters and LinkedIn. Astro, English and French. | https://jibinp.github.io/portfolio |
-| [`brandPortfolio/`](brandPortfolio/) | Brand site for freelance or company work. Not started yet. | — |
+Live at https://jibinp.github.io/portfolio
+
+Other sites live in their own repos: the home page in `jibinp.github.io`, and later the brand site in its own `brand` repo.
 
 ## Deploys
 
-- `jobPortfolio/` deploys to GitHub Pages through `.github/workflows/deploy-job.yml`. It runs only when files in `jobPortfolio/` change.
-- `brandPortfolio/` will deploy separately (for example Netlify or Vercel with base directory `brandPortfolio`, on its own domain).
+`jobPortfolio/` deploys to GitHub Pages through `.github/workflows/deploy-job.yml`. It runs only when files in `jobPortfolio/` change.
 
 ## Run the job site locally
 
@@ -19,3 +17,7 @@ cd jobPortfolio
 npm install
 npm run dev
 ```
+
+## User manual
+
+How to change the site yourself, without Claude: [user-manual/](user-manual/README.md)
