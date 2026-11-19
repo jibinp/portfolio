@@ -12,11 +12,11 @@
 
   var fr = (document.documentElement.lang || '').slice(0, 2) === 'fr';
   var L = fr ? {
-    open: 'Message', title: 'Laisser un message', sub: 'Privé : seul Jibin le lit.',
+    open: 'Message', title: 'Laisser un message',
     name: 'Nom', email: 'E-mail', msg: 'Message', send: 'Envoyer', close: 'Fermer',
     sending: 'Envoi…', ok: 'Merci ! Votre message a été envoyé.', err: 'Échec de l’envoi. Réessayez plus tard.'
   } : {
-    open: 'Message', title: 'Leave a message', sub: 'Private: only Jibin reads it.',
+    open: 'Message', title: 'Leave a message',
     name: 'Name', email: 'Email', msg: 'Message', send: 'Send', close: 'Close',
     sending: 'Sending…', ok: 'Thank you! Your message was sent.', err: 'Could not send. Please try again later.'
   };
@@ -32,10 +32,10 @@
     '#jp-msg::backdrop{background:rgba(0,0,0,.6)}' +
     '#jp-msg form{display:grid;gap:12px;padding:22px}' +
     '#jp-msg h2{margin:0;font-size:20px;font-weight:600;letter-spacing:-.02em}' +
-    '#jp-msg .s{margin:-6px 0 4px;color:#a3adb9;font-size:13px}' +
     '#jp-msg label{display:grid;gap:5px;font-size:13px;color:#a3adb9}' +
     '#jp-msg input,#jp-msg textarea{font:inherit;color:#ecf0f4;background:#07090c;border:1px solid rgba(255,255,255,.14);' +
     'border-radius:10px;padding:10px 12px;width:100%;box-sizing:border-box}' +
+    '#jp-msg .rq{color:#f87171;font-weight:600}' +
     '#jp-msg textarea{min-height:110px;resize:vertical}' +
     '#jp-msg input:focus,#jp-msg textarea:focus{outline:none;border-color:#34d399;box-shadow:0 0 0 3px rgba(52,211,153,.18)}' +
     '#jp-msg .r{display:flex;gap:10px;justify-content:flex-end;margin-top:4px}' +
@@ -56,16 +56,15 @@
   dlg.id = 'jp-msg'; dlg.setAttribute('aria-labelledby', 'jp-msg-t');
   dlg.innerHTML =
     '<form novalidate>' +
-    '<h2 id="jp-msg-t"></h2><p class="s"></p>' +
-    '<label><span data-l="name"></span><input name="name" required maxlength="100" autocomplete="name"></label>' +
-    '<label><span data-l="email"></span><input name="email" type="email" required maxlength="150" autocomplete="email"></label>' +
-    '<label><span data-l="msg"></span><textarea name="message" required maxlength="4000"></textarea></label>' +
+    '<h2 id="jp-msg-t"></h2>' +
+    '<label><span><span data-l="name"></span></span><input name="name" maxlength="100" autocomplete="name"></label>' +
+    '<label><span><span data-l="email"></span> <b class="rq" aria-hidden="true">*</b></span><input name="email" type="email" required maxlength="150" autocomplete="email"></label>' +
+    '<label><span><span data-l="msg"></span> <b class="rq" aria-hidden="true">*</b></span><textarea name="message" required maxlength="4000"></textarea></label>' +
     '<input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">' +
     '<p class="st" role="status" aria-live="polite"></p>' +
     '<div class="r"><button type="button" class="x"></button><button type="submit" class="go"></button></div>' +
     '</form>';
   dlg.querySelector('h2').textContent = L.title;
-  dlg.querySelector('.s').textContent = L.sub;
   dlg.querySelectorAll('[data-l]').forEach(function (n) { n.textContent = L[n.getAttribute('data-l')]; });
   dlg.querySelector('.x').textContent = L.close;
   dlg.querySelector('.go').textContent = L.send;
@@ -90,7 +89,7 @@
         access_key: key,
         subject: 'New message from ' + site,
         from_name: site + ' website',
-        name: form.name.value.trim(),
+        name: form.name.value.trim() || '(no name given)',
         email: form.email.value.trim(),
         message: form.message.value.trim(),
         page: location.href

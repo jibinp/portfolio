@@ -829,12 +829,28 @@ a.lang__btn { display: inline-grid; place-items: center; text-decoration: none; 
 .cform input:focus, .cform textarea:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px rgba(52,211,153,.18); }
 .cform button { justify-self: start; min-height: 46px; }
 .cform button[disabled] { opacity: .6; cursor: progress; }
+.cform .req { color: var(--err); font-weight: 600; }
 .cform__hp { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
 .cform__status { min-height: 1.4em; font-size: .9rem; color: var(--text-2); }
 .cform__status.is-ok { color: var(--accent); }
 .cform__status.is-err { color: var(--err); }
 .cform__or { margin-top: 28px; font-size: .74rem; letter-spacing: .08em; text-transform: uppercase; color: var(--text-3); }
 .cform__or + .cta__links { margin-top: 14px; }
+
+/* Compact contact block: heading, form and links fit on one screen */
+.cta:has(.cform) { padding: 40px 24px 36px; }
+.cta:has(.cform) h2 { font-size: clamp(1.5rem, 2.6vw, 2rem); }
+.cta:has(.cform) .sec-sub { margin-top: 10px; font-size: .95rem; }
+.cta .cform { margin-top: 22px; gap: 10px; }
+.cta .cform__row { gap: 10px; }
+.cta .cform label { gap: 4px; font-size: .78rem; }
+.cta .cform input, .cta .cform textarea { font-size: .92rem; padding: 8px 12px; min-height: 40px; border-radius: 10px; }
+.cta .cform textarea { min-height: 88px; }
+.cta .cform button { min-height: 40px; font-size: .9rem; }
+.cta .cform__status { min-height: 1.2em; font-size: .82rem; }
+.cta .cform__or { margin-top: 10px; font-size: .68rem; }
+.cta .cform__or + .cta__links { margin-top: 10px; }
+.cta:has(.cform) .cta__links .btn { font-size: .88rem; min-height: 40px; padding-top: 8px; padding-bottom: 8px; }
 
 /* ---------- Experience entries: summary + sections + bullets ---------- */
 .tl__text { color: var(--text-2); font-size: .95rem; }
