@@ -1,7 +1,7 @@
 ---
 import '../styles/global.css';
 import Icons from '../components/Icons.astro';
-import { t } from '../data/site.js';
+import { t, contact } from '../data/site.js';
 import { href, asset } from '../lib/i18n.js';
 
 const { lang = 'en', path = '/', title, description } = Astro.props;
@@ -78,5 +78,6 @@ const nav = [
   </footer>
 
   <script is:inline src={asset('/scripts/main.js')} defer></script>
+  {contact.formKey && <script is:inline src={asset('/scripts/message.js')} data-key={contact.formKey} data-site="Portfolio" defer></script>}
 </body>
 </html>

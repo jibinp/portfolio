@@ -3,3 +3,6 @@ dist/
 .astro/
 .DS_Store
 Thumbs.db
+
+# Original photos (contain GPS data), never publish
+Pics/
