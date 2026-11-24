@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 360" role="img" aria-labelledby="t d">
+  <title id="t">Op-amp output clipping below ADC full scale</title>
+  <desc id="d">Illustration. As the input current rises, the expected reading rises in a straight line up to the ADC full-scale input. The real op-amp output follows it at first, then flattens at the op-amp's output swing limit, well below ADC full scale.</desc>
+  <rect width="760" height="360" rx="16" fill="#0b0e13"/>
+  <g font-family="Geist, Inter, system-ui, sans-serif" font-size="15">
+    <!-- axes -->
+    <line x1="90" y1="300" x2="700" y2="300" stroke="#6f7a87" stroke-width="2"/>
+    <line x1="90" y1="300" x2="90" y2="40" stroke="#6f7a87" stroke-width="2"/>
+    <text x="395" y="340" text-anchor="middle" fill="#a3adb9">Input current</text>
+    <text x="34" y="170" text-anchor="middle" fill="#a3adb9" transform="rotate(-90 34 170)">Signal at ADC input</text>
+    <!-- ADC full scale -->
+    <line x1="90" y1="70" x2="700" y2="70" stroke="#22d3ee" stroke-width="2" stroke-dasharray="8 7"/>
+    <text x="696" y="60" text-anchor="end" fill="#22d3ee">ADC full scale</text>
+    <!-- op-amp swing limit -->
+    <line x1="90" y1="150" x2="700" y2="150" stroke="#fbbf24" stroke-width="1.5" stroke-dasharray="3 6" opacity=".8"/>
+    <text x="104" y="140" fill="#fbbf24">Op-amp output swing limit</text>
+    <!-- expected -->
+    <line x1="90" y1="300" x2="560" y2="70" stroke="#6f7a87" stroke-width="2.5" stroke-dasharray="10 8"/>
+    <text x="470" y="96" fill="#a3adb9" text-anchor="end">Expected</text>
+    <!-- real -->
+    <path d="M90 300 L390 153 Q400 150 420 150 L700 150" fill="none" stroke="#34d399" stroke-width="4" stroke-linejoin="round"/>
+    <text x="560" y="180" fill="#34d399">Real reading: flattens early</text>
+    <!-- gap marker -->
+    <line x1="640" y1="78" x2="640" y2="144" stroke="#f87171" stroke-width="2"/>
+    <path d="M634 84 L640 74 L646 84 M634 138 L640 148 L646 138" fill="none" stroke="#f87171" stroke-width="2"/>
+    <text x="628" y="115" text-anchor="end" fill="#f87171">lost range</text>
+    <text x="104" y="62" fill="#6f7a87" font-size="13">Illustration</text>
+  </g>
+</svg>
