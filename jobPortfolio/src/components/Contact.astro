@@ -30,7 +30,7 @@ const f = s.form;
 
       {contact.formKey && <p class="cform__or mono">{f.or}</p>}
       <div class="cta__links">
-        <a class="btn btn--primary" href={`mailto:${contact.email}`}><svg class="ic"><use href="#i-mail" /></svg> {contact.email}</a>
+        <a class="btn btn--ghost" href={`mailto:${contact.email}`}><svg class="ic"><use href="#i-mail" /></svg> {contact.email}</a>
         <a class="btn btn--ghost" href={contact.linkedin} target="_blank" rel="noopener"><svg class="ic"><use href="#i-in" /></svg> LinkedIn</a>
         <a class="btn btn--ghost" href={contact.github} target="_blank" rel="noopener"><svg class="ic"><use href="#i-gh" /></svg> GitHub</a>
       </div>

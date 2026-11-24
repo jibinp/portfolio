@@ -23,7 +23,7 @@
   --maxw: 1180px;
   --ease: cubic-bezier(.2, .8, .2, 1);
 
-  --font: "Geist", "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
   --mono: "Geist Mono", "JetBrains Mono", ui-monospace, Consolas, monospace;
   color-scheme: dark;
 }
@@ -864,3 +864,20 @@ a.lang__btn { display: inline-grid; place-items: center; text-decoration: none; 
 /* experience page: single wide column so bullets read on one line */
 .page-top .exp { grid-template-columns: 1fr; }
 .page-top .exp .sec-head { margin-bottom: 28px; }
+
+/* ---------- Lighter type (Inter, regular-weight headings, slightly smaller scale) ---------- */
+html { font-size: 93.75%; }
+body { font-weight: 400; line-height: 1.7; }
+h1, h2, h3, h4 { font-weight: 500; letter-spacing: -0.015em; }
+.hero h1 { font-weight: 400; letter-spacing: -0.03em; }
+.sec-head h2, .cta h2 { font-weight: 400; letter-spacing: -0.02em; }
+.card--feature h3 { font-weight: 400; }
+.hl__num { font-weight: 500; letter-spacing: -0.02em; }
+.brand { font-weight: 500; }
+
+/* ---------- Minimal language switch: plain "EN | FR" text ---------- */
+.lang { padding: 0; gap: 0; background: none; border: 0; border-radius: 0; align-items: center; }
+.lang__btn { min-width: 0; padding: 0 9px; border-radius: 0; font: 500 .74rem/1 var(--mono); letter-spacing: .06em; color: var(--text-3); background: none; }
+.lang__btn + .lang__btn { border-left: 1px solid var(--border-strong); }
+.lang__btn:hover { color: var(--text); background: none; }
+.lang__btn.is-on { color: var(--text); background: none; }

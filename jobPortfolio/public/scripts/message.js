@@ -22,11 +22,11 @@
   };
 
   var css = '' +
-    '#jp-msg-btn{position:fixed;right:16px;bottom:16px;z-index:9998;display:inline-flex;align-items:center;gap:8px;' +
-    'padding:12px 18px;border:0;border-radius:999px;cursor:pointer;font:600 15px/1 Geist,Inter,system-ui,sans-serif;' +
+    '#jp-msg-btn{position:fixed;right:16px;bottom:16px;z-index:9998;display:inline-flex;align-items:center;justify-content:center;' +
+    'width:54px;height:54px;padding:0;border:0;border-radius:50%;cursor:pointer;' +
     'color:#04130d;background:linear-gradient(135deg,#34d399,#22d3ee);box-shadow:0 8px 24px rgba(0,0,0,.45)}' +
     '#jp-msg-btn:hover{filter:brightness(1.08)}#jp-msg-btn:focus-visible{outline:2px solid #ecf0f4;outline-offset:3px}' +
-    '#jp-msg-btn svg{width:18px;height:18px}' +
+    '#jp-msg-btn svg{width:24px;height:24px}' +
     '#jp-msg{border:1px solid rgba(255,255,255,.14);border-radius:18px;padding:0;width:min(440px,calc(100vw - 32px));' +
     'background:#0b0e13;color:#ecf0f4;font:400 15px/1.5 Geist,Inter,system-ui,sans-serif}' +
     '#jp-msg::backdrop{background:rgba(0,0,0,.6)}' +
@@ -49,8 +49,9 @@
 
   var btn = document.createElement('button');
   btn.id = 'jp-msg-btn'; btn.type = 'button'; btn.setAttribute('aria-haspopup', 'dialog');
-  btn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg><span></span>';
-  btn.querySelector('span').textContent = L.open;
+  btn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>';
+  btn.setAttribute('aria-label', L.title);
+  btn.title = L.title;
 
   var dlg = document.createElement('dialog');
   dlg.id = 'jp-msg'; dlg.setAttribute('aria-labelledby', 'jp-msg-t');
@@ -70,6 +71,13 @@
   dlg.querySelector('.go').textContent = L.send;
 
   document.body.appendChild(btn);
+  // Hide the floating button while the page's own contact form is on screen.
+  var pageForm = document.querySelector('#contact form');
+  if (pageForm && 'IntersectionObserver' in window) {
+    new IntersectionObserver(function (es) {
+      btn.style.display = es[0].isIntersecting ? 'none' : '';
+    }, { threshold: 0.15 }).observe(pageForm);
+  }
   document.body.appendChild(dlg);
 
   var form = dlg.querySelector('form'), status = dlg.querySelector('.st'), go = dlg.querySelector('.go');

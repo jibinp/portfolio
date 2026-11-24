@@ -170,8 +170,8 @@ export const t = {
     },
     contactSec: {
       eyebrow: 'Contact',
-      h2: 'Got a hard problem in hardware, firmware or software?',
-      sub: "Happy to talk about a stubborn bug, a board that won't boot or a dashboard that needs its data.",
+      h2: 'Looking for an embedded systems engineer?',
+      sub: "Open to embedded, IoT and technical lead roles in Canada and worldwide: remote, hybrid or on-site, with relocation. Send a message and I'll get back to you.",
       form: { name: 'Your name', email: 'Your email', message: 'Message', send: 'Send message', sending: 'Sending…', ok: 'Thanks, your message is on its way. I will reply by email.', err: 'Sorry, the message could not be sent. Please email me directly.', or: 'or reach me directly' },
     },
     footer: '',
@@ -334,8 +334,8 @@ export const t = {
     },
     contactSec: {
       eyebrow: 'Contact',
-      h2: 'Un problème coriace en matériel, en micrologiciel ou en logiciel?',
-      sub: 'Je serai ravi de discuter d’un bogue coriace, d’une carte qui ne démarre pas ou d’un tableau de bord qui attend ses données.',
+      h2: 'Vous recherchez un ingénieur en systèmes embarqués?',
+      sub: 'Ouvert aux postes en systèmes embarqués, IoT et direction technique, au Canada et à l’international : à distance, hybride ou sur site, avec relocalisation. Envoyez-moi un message et je vous répondrai.',
       form: { name: 'Votre nom', email: 'Votre courriel', message: 'Message', send: 'Envoyer', sending: 'Envoi…', ok: 'Merci, votre message est envoyé. Je vous répondrai par courriel.', err: 'Désolé, le message n’a pas pu être envoyé. Écrivez-moi directement.', or: 'ou contactez-moi directement' },
     },
     footer: '',
