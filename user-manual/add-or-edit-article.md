@@ -80,6 +80,7 @@ order: 0
 | `tags` | 2–3 short topics, each in quotes, separated by commas |
 | `readMin` | Reading time in minutes: number of words ÷ 200, rounded |
 | `order` | Position in the list. Lower shows first. Use `0` for the newest, and raise the others if needed |
+| `image` | Optional. The picture LinkedIn shows when the link is shared. A PNG of 1200 × 628 in `jobPortfolio/public/img/articles/`, written as `"/img/articles/name.png"`. Leave the line out to use the default portfolio picture |
 
 Rules that break the header if missed:
 - The `---` lines must be the very first and last lines of the block.

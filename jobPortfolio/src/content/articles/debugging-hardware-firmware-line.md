@@ -1,49 +1,58 @@
 ---
-title: "Debugging across the hardware–firmware line: prove it, don't guess"
-summary: "The hardest bugs on a connected product sit between the board and the code, and each side blames the other. Lessons from years of board-level fault finding and today's firmware work: how to find the real root cause and prove it."
+title: "Debugging across the hardware–firmware line: prove it, don't guess it"
+summary: "The costliest bugs on a connected product live where the board meets the code, and each side looks sound on its own. Lessons from years of board-level fault finding and from leading firmware and hardware bring-up today: how to isolate the true root cause, and prove it."
 tags: ["Debugging", "Firmware", "Hardware", "FreeRTOS", "Bring-up"]
 readMin: 4
+image: "/img/articles/debugging-og.png"
 order: 0
 ---
 
-Most bugs are easy to place. The code is wrong, or the board is wrong. The expensive ones sit on the line between the two. The firmware team says it is the hardware, the hardware team says it is the firmware, and the product waits.
+Most defects are easy to attribute: either the code is wrong or the board is. The costly ones hide at the seam between the two, where the firmware looks correct, the board looks correct, and the product still fails.
 
-I have worked on both sides of that line. For years I traced faults on laptop and desktop motherboards down to a single failed part, with a schematic in one hand and an oscilloscope probe in the other. Today I lead firmware development and hardware bring-up for railway and industrial IoT products, and I still debug hands-on. The habits from the first job are the ones I use most in the second.
+![Illustration: hardware on one side, firmware on the other, and the costly bugs at the boundary where they meet](/portfolio/img/articles/debug-boundary.svg)
+
+I have worked on both sides of that seam. For years I traced faults on motherboards down to a single failed component, a schematic in one hand and an oscilloscope probe in the other. Today I lead embedded firmware development and hardware bring-up for railway and industrial IoT products, and I debug hands-on. The discipline I built at the repair bench carries straight into that work.
 
 ## Start from the symptom, not the suspect
 
-Every fault starts as a symptom someone saw: a port that stays silent, a reading that flattens out, a device that crashes after setup. The trap is to jump straight to the part you already distrust.
+Every fault begins as an observation: a port that stays silent, a reading that plateaus, a device that crashes moments after setup. The temptation is to go straight for the component you already distrust. Resist it.
 
-On an RS485 port that sent nothing at all, the Modbus driver was the obvious suspect. It looked right, and it was right. The real cause was the order in which the STM32's USART kernel clock was set up, which left the peripheral unclocked. A fix in the start-up sequence, not in the protocol.
+On one board, an RS485 port transmitted nothing at all. The Modbus driver was the obvious suspect; it looked right, and it was right. The real culprit was the order in which the STM32's USART kernel clock was configured, which left the peripheral unclocked. The fix lived in the start-up sequence, not in the driver.
 
-The symptom said "no signal on the pin". Probing the pin with a scope and walking back from there found it faster than rereading the driver would have.
+The symptom was unambiguous: no signal on the pin. Probing that pin with a scope and working backwards found the cause far sooner than another read-through of the driver would have.
 
 ## Measure on both sides of the line
 
-When a fault could be hardware or firmware, measure where they meet.
+When a fault could be hardware or firmware, measure precisely where the two meet.
 
-A current channel on one board read correctly at low values and then flattened out well below full scale. It looked like an ADC or scaling problem in the firmware. Measuring the analog front end showed the op-amp running out of output swing before the ADC ever saw the signal.
+A current channel read accurately at low values, then plateaued well short of full scale. It looked like an ADC or scaling bug in the firmware. Measuring the analog front end revealed otherwise: the op-amp was hitting its output-swing limit below the ADC's full-scale input.
 
 ![Illustration: the op-amp output flattens at its swing limit, well below the ADC's full-scale input](/portfolio/img/articles/opamp-clipping.svg)
 
-The firmware was fine. The hardware team got exact headroom numbers for the next board revision, which saved weeks of firmware workarounds and kept the prototype delivery on schedule. One measurement at the boundary settled an argument that could have gone on for weeks.
+The firmware was sound, and the hardware team got exact headroom figures for the next board revision. That avoided weeks of firmware workarounds and kept the prototype delivery on schedule. A single measurement at the boundary settled the question.
 
 ## Prove it, don't guess it
 
-A guess that happens to work is still a guess, and it comes back in the field.
+A guess that happens to work is still a guess, and guesses have a habit of resurfacing in the field.
 
-When a device crashed right after setup, the easy answer was "make the stacks bigger and see". Instead, I added a HardFault handler that captures the stacked PC and LR, plus a FreeRTOS stack-overflow hook, and used the compiler's `.su` stack-usage files and the linker `.map` file to show which task overflowed and why. The stacks were then sized from evidence, and the production firmware stayed stable.
+When a device crashed shortly after setup, the expedient answer was to enlarge the stacks and hope. Instead, I added a HardFault handler that captures the stacked PC and LR, alongside a FreeRTOS stack-overflow hook. The hook identified the offending task; the compiler's `.su` stack-usage files and the linker `.map` file explained why. The stacks were then sized from evidence, and the production firmware has remained stable since.
 
-On a shared SPI flash used by three FreeRTOS tasks, the lock covered only part of each operation, so another task could slip in between a command and its read. Locking the whole operation fixed it, and a test report, not a hunch, closed it.
+![Illustration: from the crash to the HardFault handler, the stack-overflow hook, the .su and .map files, and stacks sized from evidence](/portfolio/img/articles/crash-evidence.svg)
 
-## Catch it before the hardware does
+On another board, settings occasionally read back as garbage from an SPI flash shared by three FreeRTOS tasks. The lock spanned only part of each operation, so another task could slip in between a command and its read. Extending the lock across the whole operation cured it, and a test report, not intuition, closed the issue.
 
-The cheapest bug is the one found before a board is on the bench. Python device simulators let firmware talk to a realistic peer long before the real hardware exists. Endurance tests with formal test reports then check the behaviour that matters in the field, such as power loss and long radio outages, before a release goes out.
+![Illustration: with a partial lock, another task slips in between a command and its read; with the lock across the whole operation, it waits its turn](/portfolio/img/articles/flash-lock.svg)
 
-## Building a proof-first team
+## Catch it before the field does
 
-At the board-repair bench I kept a problem-and-solution log of recurring faults, and the next technician who saw the same symptom found the cause in minutes. Today the same log runs across my engineering team: every root cause gets a short entry with the symptom, the measurement at the boundary, the real cause and the test that verified the fix. It has cut repeat bring-up issues across projects.
+The cheapest bug is the one found before a board ever reaches the bench. Our Python device simulators let firmware talk to a realistic peer well before the real hardware is ready. Endurance tests, documented in formal test reports, then exercise the behaviour that matters in the field, such as power loss and prolonged radio outages, before any release ships.
 
-The same rule applies when I review a teammate's code or sign off a board revision: "it works now" is not accepted on its own. It needs a scope trace, a fault log or a test report behind it.
+## Build a proof-first team
 
-Tools and chips change every few years. This way of working does not, and it is the most useful thing my years on both sides of the line have taught me.
+At the repair bench I kept a problem-and-solution log of recurring faults, so the next technician to meet the same symptom found the cause in minutes. My engineering team now keeps the same kind of log: every root cause earns a short entry recording the symptom, the measurement at the boundary, the true cause and the test that verified the fix. It has cut repeat bring-up issues across projects.
+
+![Illustration: the proof-first loop of symptom, measurement at the boundary, root cause, verifying test and log entry](/portfolio/img/articles/proof-loop.svg)
+
+When I review a teammate's code or sign off on a board revision, I don't accept "it works now" on its own. It needs a scope trace, a fault log or a test report behind it.
+
+Tools and chips turn over every few years; this way of working endures. It is the most valuable lesson my years on both sides of the line have taught me.

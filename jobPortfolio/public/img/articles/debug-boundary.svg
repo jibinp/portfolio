@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 300" role="img" aria-labelledby="t d">
+  <title id="t">The hardware–firmware boundary</title>
+  <desc id="d">Illustration. Hardware on the left, firmware on the right. Each side looks correct on its own; the costly bugs sit at the boundary, which is where to measure.</desc>
+  <rect width="760" height="300" rx="16" fill="#0b0e13"/>
+  <g font-family="Geist, Inter, system-ui, sans-serif">
+    <!-- hardware -->
+    <rect x="30" y="50" width="270" height="200" rx="14" fill="#101820" stroke="#34d399" stroke-width="2"/>
+    <text x="165" y="84" text-anchor="middle" font-size="19" font-weight="600" fill="#ecf0f4">Hardware</text>
+    <g font-size="14" fill="#a3adb9" text-anchor="middle">
+      <text x="165" y="120">Clocks and power</text>
+      <text x="165" y="146">Analog front end</text>
+      <text x="165" y="172">Buses and transceivers</text>
+    </g>
+    <text x="165" y="222" text-anchor="middle" font-size="14" fill="#34d399">✓ looks right</text>
+    <!-- firmware -->
+    <rect x="460" y="50" width="270" height="200" rx="14" fill="#101820" stroke="#22d3ee" stroke-width="2"/>
+    <text x="595" y="84" text-anchor="middle" font-size="19" font-weight="600" fill="#ecf0f4">Firmware</text>
+    <g font-size="14" fill="#a3adb9" text-anchor="middle">
+      <text x="595" y="120">Start-up and drivers</text>
+      <text x="595" y="146">RTOS tasks</text>
+      <text x="595" y="172">Storage and comms</text>
+    </g>
+    <text x="595" y="222" text-anchor="middle" font-size="14" fill="#22d3ee">✓ looks right</text>
+    <!-- boundary -->
+    <rect x="318" y="30" width="124" height="240" rx="14" fill="#1a1410" stroke="#f87171" stroke-width="2" stroke-dasharray="7 6"/>
+    <text x="380" y="70" text-anchor="middle" font-size="16" font-weight="600" fill="#f87171">Boundary</text>
+    <g fill="none" stroke="#fbbf24" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M380 110 v40"/><path d="M370 150 h20 l-10 22 z" fill="#fbbf24"/>
+    </g>
+    <text x="380" y="200" text-anchor="middle" font-size="14" fill="#fbbf24">Measure here</text>
+    <text x="380" y="248" text-anchor="middle" font-size="13" fill="#f87171">costly bugs hide</text>
+    <text x="30" y="290" font-size="12" fill="#6f7a87">Illustration</text>
+  </g>
+</svg>

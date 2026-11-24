@@ -38,7 +38,8 @@ const articles = defineCollection({
     title: z.string(),
     summary: z.string(),
     tags: z.array(z.string()).default([]),
-    readMin: z.number(),                   // reading time in minutes
+    readMin: z.number(),
+    image: z.string().optional(),          // link-preview image (PNG), e.g. '/img/articles/x-og.png'                   // reading time in minutes
     order: z.number(),                     // lower = first
   }),
 });

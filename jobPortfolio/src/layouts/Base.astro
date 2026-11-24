@@ -4,13 +4,14 @@ import Icons from '../components/Icons.astro';
 import { t, contact } from '../data/site.js';
 import { href, asset } from '../lib/i18n.js';
 
-const { lang = 'en', path = '/', title, description } = Astro.props;
+const { lang = 'en', path = '/', title, description, image } = Astro.props;
 const s = t[lang];
 const pageTitle = title ? `${title} · Jibin Poulose` : s.meta.title;
 const desc = description ?? s.meta.description;
 const site = Astro.site?.toString().replace(/\/$/, '') ?? '';
 const enUrl = site + href('en', path);
 const frUrl = site + href('fr', path);
+const ogImage = site + asset(image ?? '/img/og-default.png');
 const here = (p) => (path === p || (p !== '/' && path.startsWith(p)) ? 'page' : undefined);
 const nav = [
   { p: '/#about', label: s.nav.about },
@@ -37,6 +38,9 @@ const nav = [
   <meta property="og:description" content={desc}>
   <meta property="og:type" content="website">
   <meta property="og:locale" content={lang === 'fr' ? 'fr_FR' : 'en_US'}>
+  <meta property="og:url" content={lang === 'fr' ? frUrl : enUrl}>
+  <meta property="og:image" content={ogImage}>
+  <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href={asset('/favicon.svg')} type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

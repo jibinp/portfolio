@@ -12,7 +12,7 @@ const a = articles.find((x) => x.slug === slug);
 const { Content } = await render(a);
 const others = articles.filter((x) => x !== a);
 ---
-<Base lang="en" path={`/articles/${slug}`} title={a.data.title} description={a.data.summary}>
+<Base lang="en" path={`/articles/${slug}`} title={a.data.title} description={a.data.summary} image={a.data.image}>
   <article class="section page-top project">
     <div class="wrap">
       <a class="back mono" href={href('en', '/articles')}><svg class="ic"><use href="#i-arrow" /></svg> {s.back}</a>

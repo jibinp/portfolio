@@ -16,7 +16,7 @@ const { Content } = await render(p);
 const i = projects.indexOf(p);
 const others = [1, 2, 3].map((k) => projects[(i + k) % projects.length]).filter((x) => x !== p);
 ---
-<Base lang={lang} path={`/projects/${slug}`} title={d.title} description={d.summary}>
+<Base lang={lang} path={`/projects/${slug}`} title={d.title} description={d.summary} image={d.cover ?? d.image}>
   <article class="section page-top project">
     <div class="wrap">
       <a class="back mono" href={href(lang, '/projects')}><svg class="ic"><use href="#i-arrow" /></svg> {s.back}</a>

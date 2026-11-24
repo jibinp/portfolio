@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 230" role="img" aria-labelledby="t d">
+  <title id="t">From crash to evidence</title>
+  <desc id="d">Illustration. A crash triggers the HardFault handler, which records PC and LR. The FreeRTOS stack-overflow hook names the task. The .su and .map files explain why. The stacks are then sized from evidence.</desc>
+  <rect width="760" height="230" rx="16" fill="#0b0e13"/>
+  <g font-family="Geist, Inter, system-ui, sans-serif" text-anchor="middle">
+    <g stroke-width="2">
+      <rect x="20"  y="60" width="120" height="96" rx="12" fill="#1a1410" stroke="#f87171"/>
+      <rect x="168" y="60" width="130" height="96" rx="12" fill="#101820" stroke="#22d3ee"/>
+      <rect x="326" y="60" width="130" height="96" rx="12" fill="#101820" stroke="#22d3ee"/>
+      <rect x="484" y="60" width="120" height="96" rx="12" fill="#101820" stroke="#22d3ee"/>
+      <rect x="632" y="60" width="108" height="96" rx="12" fill="#0f1a17" stroke="#34d399"/>
+    </g>
+    <g font-size="16" font-weight="600" fill="#ecf0f4">
+      <text x="80"  y="100">Crash</text>
+      <text x="233" y="100">HardFault</text>
+      <text x="391" y="100">Overflow hook</text>
+      <text x="544" y="100">.su + .map</text>
+      <text x="686" y="100">Stacks</text>
+    </g>
+    <g font-size="13" fill="#a3adb9">
+      <text x="80"  y="126">after setup</text>
+      <text x="233" y="126">stacked PC, LR</text>
+      <text x="391" y="126">names the task</text>
+      <text x="544" y="126">explain why</text>
+      <text x="686" y="126">sized from</text>
+      <text x="686" y="143">evidence</text>
+    </g>
+    <g fill="#6f7a87">
+      <path d="M144 108 l16 0 m-6 -6 l6 6 l-6 6" stroke="#6f7a87" stroke-width="2" fill="none"/>
+      <path d="M302 108 l16 0 m-6 -6 l6 6 l-6 6" stroke="#6f7a87" stroke-width="2" fill="none"/>
+      <path d="M460 108 l16 0 m-6 -6 l6 6 l-6 6" stroke="#6f7a87" stroke-width="2" fill="none"/>
+      <path d="M608 108 l16 0 m-6 -6 l6 6 l-6 6" stroke="#6f7a87" stroke-width="2" fill="none"/>
+    </g>
+    <text x="380" y="36" font-size="15" fill="#a3adb9">Evidence, not a guess</text>
+    <text x="20" y="214" font-size="12" fill="#6f7a87" text-anchor="start">Illustration</text>
+  </g>
+</svg>

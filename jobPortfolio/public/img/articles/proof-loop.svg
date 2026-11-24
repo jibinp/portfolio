@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 200" role="img" aria-labelledby="t d">
+  <title id="t">The proof-first loop</title>
+  <desc id="d">Illustration. Symptom, then measurement at the boundary, then root cause, then a verifying test, then a log entry that the next engineer can use.</desc>
+  <rect width="760" height="200" rx="16" fill="#0b0e13"/>
+  <g font-family="Geist, Inter, system-ui, sans-serif" text-anchor="middle">
+    <g stroke-width="2" fill="#101820">
+      <rect x="20"  y="50" width="124" height="70" rx="35" stroke="#f87171"/>
+      <rect x="168" y="50" width="124" height="70" rx="35" stroke="#fbbf24"/>
+      <rect x="316" y="50" width="124" height="70" rx="35" stroke="#22d3ee"/>
+      <rect x="464" y="50" width="124" height="70" rx="35" stroke="#34d399"/>
+      <rect x="612" y="50" width="124" height="70" rx="35" stroke="#a3adb9"/>
+    </g>
+    <g font-size="15" font-weight="600" fill="#ecf0f4">
+      <text x="82"  y="82">Symptom</text>
+      <text x="230" y="82">Measure</text>
+      <text x="378" y="82">Root cause</text>
+      <text x="526" y="82">Verify</text>
+      <text x="674" y="82">Log it</text>
+    </g>
+    <g font-size="12" fill="#a3adb9">
+      <text x="82"  y="102">what was seen</text>
+      <text x="230" y="102">at the boundary</text>
+      <text x="378" y="102">the real cause</text>
+      <text x="526" y="102">test report</text>
+      <text x="674" y="102">for the team</text>
+    </g>
+    <g stroke="#6f7a87" stroke-width="2" fill="none">
+      <path d="M146 85 h18 m-6 -6 l6 6 l-6 6"/>
+      <path d="M294 85 h18 m-6 -6 l6 6 l-6 6"/>
+      <path d="M442 85 h18 m-6 -6 l6 6 l-6 6"/>
+      <path d="M590 85 h18 m-6 -6 l6 6 l-6 6"/>
+      <path d="M674 124 v28 h-592 v-26 m-6 6 l6 -6 l6 6"/>
+    </g>
+    <text x="378" y="172" font-size="13" fill="#6f7a87">the next engineer starts here</text>
+    <text x="20" y="190" font-size="12" fill="#6f7a87" text-anchor="start">Illustration</text>
+  </g>
+</svg>

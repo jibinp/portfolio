@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 330" role="img" aria-labelledby="t d">
+  <title id="t">Partial lock versus whole-operation lock on a shared SPI flash</title>
+  <desc id="d">Illustration. Top: the lock covers only Task A's command, so Task B slips in before Task A's read, and the read returns garbage. Bottom: the lock covers Task A's command and read together, so Task B waits and both reads are correct.</desc>
+  <rect width="760" height="330" rx="16" fill="#0b0e13"/>
+  <g font-family="Geist, Inter, system-ui, sans-serif" font-size="14">
+    <!-- before -->
+    <text x="24" y="38" font-size="16" font-weight="600" fill="#f87171">Before: lock covers part of the operation</text>
+    <text x="24" y="78" fill="#a3adb9">Task A</text>
+    <text x="24" y="118" fill="#a3adb9">Task B</text>
+    <rect x="110" y="58" width="150" height="30" rx="6" fill="#163a2c" stroke="#34d399"/>
+    <text x="185" y="78" text-anchor="middle" fill="#ecf0f4">🔒 command</text>
+    <rect x="270" y="98" width="150" height="30" rx="6" fill="#2a1a1a" stroke="#f87171"/>
+    <text x="345" y="118" text-anchor="middle" fill="#ecf0f4">slips in</text>
+    <rect x="430" y="58" width="150" height="30" rx="6" fill="#101820" stroke="#6f7a87"/>
+    <text x="505" y="78" text-anchor="middle" fill="#ecf0f4">read</text>
+    <text x="600" y="78" fill="#f87171">→ garbage</text>
+    <!-- divider -->
+    <line x1="24" y1="160" x2="736" y2="160" stroke="#1f2a33" stroke-width="2"/>
+    <!-- after -->
+    <text x="24" y="196" font-size="16" font-weight="600" fill="#34d399">After: lock covers the whole operation</text>
+    <text x="24" y="236" fill="#a3adb9">Task A</text>
+    <text x="24" y="276" fill="#a3adb9">Task B</text>
+    <rect x="110" y="216" width="310" height="30" rx="6" fill="#163a2c" stroke="#34d399"/>
+    <text x="265" y="236" text-anchor="middle" fill="#ecf0f4">🔒 command + read</text>
+    <rect x="110" y="256" width="310" height="30" rx="6" fill="none" stroke="#6f7a87" stroke-dasharray="5 5"/>
+    <text x="265" y="276" text-anchor="middle" fill="#6f7a87">waits</text>
+    <rect x="430" y="256" width="150" height="30" rx="6" fill="#163a2c" stroke="#34d399"/>
+    <text x="505" y="276" text-anchor="middle" fill="#ecf0f4">🔒 its turn</text>
+    <text x="440" y="236" fill="#34d399">→ correct data</text>
+    <text x="24" y="318" font-size="12" fill="#6f7a87">Illustration</text>
+  </g>
+</svg>
